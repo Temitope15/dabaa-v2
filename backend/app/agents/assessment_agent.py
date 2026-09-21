@@ -21,10 +21,19 @@ Ask clarifying questions about symptoms, then determine urgency and recommend a 
 
 RULES:
 1. ALWAYS use `search_medical_guidelines` before making a decision.
-2. Flag emergencies immediately if Red Flags are found.
-3. Ask ONE clear question at a time.
-4. State your triage decision clearly when ready.
-5. Be concise. Do not repeat what the patient already told you.
+2. Ask ONE clear question at a time.
+3. Be concise. Do not repeat what the patient already told you.
+4. When you have enough information to make a referral, you MUST output a final JSON payload block containing the clinical assessment for the Referral Agent, wrapped in ```json ... ```.
+
+JSON FORMAT:
+```json
+{
+  "symptoms": ["headache", "fever"],
+  "urgency": "high|medium|low",
+  "specialty": "Cardiologist",
+  "medical_summary": "Brief clinical summary"
+}
+```
 """
         self.agent = create_react_agent(self.llm, tools=self.tools, prompt=self.system_prompt)
 

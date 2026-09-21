@@ -25,24 +25,31 @@ class Orchestrator:
         return chat_history
 
     def _find_doctors_for_response(self, response_text: str, lat: float, lng: float):
-        """Check if the Assessment Agent reached a Triage Decision and find doctors."""
+        """Check if the Assessment Agent reached a Triage Decision by finding a JSON payload."""
+        import re
         doctors = []
         events = []
-        response_lower = response_text.lower()
         
-        if "cardiologist" in response_lower:
-            events.append("Referral Agent searching for Cardiologist nearby...")
-            doctors = referral_agent.find_doctors("Cardiologist", patient_lat=lat, patient_lng=lng)
-        elif "general" in response_lower or "doctor" in response_lower:
-            events.append("Referral Agent searching for General Practitioner nearby...")
-            doctors = referral_agent.find_doctors("General Practitioner", patient_lat=lat, patient_lng=lng)
-            
-        if doctors:
-            if any(doc.get("is_hospital") for doc in doctors):
-                events.append(f"No specific doctors found. Found {len(doctors)} nearby hospital(s).")
-            else:
-                events.append(f"Found {len(doctors)} doctor(s).")
-
+        # Look for the JSON ACL payload block
+        json_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+        if json_match:
+            try:
+                payload = json.loads(json_match.group(1))
+                specialty = payload.get("specialty", "General Practitioner")
+                urgency = payload.get("urgency", "low")
+                events.append(f"Received ACL Payload. Urgency: {urgency.upper()}")
+                events.append(f"Referral Agent searching for {specialty} nearby...")
+                
+                doctors = referral_agent.find_doctors(specialty, patient_lat=lat, patient_lng=lng)
+                
+                if doctors:
+                    if any(doc.get("is_hospital") for doc in doctors):
+                        events.append(f"No specific doctors found. Found {len(doctors)} nearby hospital(s).")
+                    else:
+                        events.append(f"Found {len(doctors)} doctor(s).")
+            except json.JSONDecodeError:
+                events.append("Error: Failed to parse ACL JSON payload.")
+                
         return doctors, events
 
     def process_message(self, patient_id: int, message: str, lat: float = 6.5244, lng: float = 3.3792, api_key: str = None):
@@ -51,6 +58,19 @@ class Orchestrator:
         session["chat_history"] = chat_history
         events = ["Assessment Agent Analyzing Symptoms..."]
         
+        # 0. Deterministic Safety Layer
+        emergency_keywords = ["accident", "unconscious", "bleeding", "heart attack", "stroke", "suicide", "can't breathe"]
+        msg_lower = message.lower()
+        if any(keyword in msg_lower for keyword in emergency_keywords):
+            safety_msg = "**EMERGENCY DETECTED**: This is an automated safety override. Do not wait for an appointment. Please head to the nearest emergency room immediately or call local emergency services (112 in Nigeria / LASAMBUS)."
+            chat_history.append(("human", message))
+            chat_history.append(("ai", safety_msg))
+            return {
+                "text": safety_msg,
+                "doctors": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng),
+                "events": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]
+            }
+            
         # 1. Run Assessment Agent
         try:
             response_text = assessment_agent.run(message, chat_history, api_key=api_key)
@@ -80,11 +100,15 @@ class Orchestrator:
         doctors, doc_events = self._find_doctors_for_response(response_text, lat, lng)
         events.extend(doc_events)
         
+        # Remove JSON block from the text shown to user
+        import re
+        display_text = re.sub(r'```json\s*.*?\s*```', '', response_text, flags=re.DOTALL).strip()
+        
         if doctors and any(doc.get("is_hospital") for doc in doctors):
-            response_text += "\n\n*Oops! Sorry, there are no specific doctors around right now, but these are nearby hospitals that you can go to based on your location.*"
+            display_text += "\n\n*Oops! Sorry, there are no specific doctors around right now, but these are nearby hospitals that you can go to based on your location.*"
             
         return {
-            "text": response_text,
+            "text": display_text,
             "doctors": doctors,
             "events": events
         }
@@ -95,12 +119,30 @@ class Orchestrator:
         chat_history = self._trim_history(session["chat_history"])
         session["chat_history"] = chat_history
         
+        # 0. Deterministic Safety Layer
+        emergency_keywords = ["accident", "unconscious", "bleeding", "heart attack", "stroke", "suicide", "can't breathe"]
+        msg_lower = message.lower()
+        if any(keyword in msg_lower for keyword in emergency_keywords):
+            safety_msg = "**EMERGENCY DETECTED**: This is an automated safety override. Do not wait for an appointment. Please head to the nearest emergency room immediately or call local emergency services (112 in Nigeria / LASAMBUS)."
+            chat_history.append(("human", message))
+            chat_history.append(("ai", safety_msg))
+            yield {"type": "events", "data": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]}
+            yield {"type": "token", "data": safety_msg}
+            yield {"type": "doctors", "data": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)}
+            return
+            
         # 1. Stream from Assessment Agent
         try:
             full_text = ""
+            hide_json = False
             for token in assessment_agent.run_stream(message, chat_history, api_key=api_key):
                 full_text += token
-                yield {"type": "token", "data": token}
+                if "```json" in full_text and not hide_json:
+                    hide_json = True
+                    # Backtrack to remove the "```json" part that was already sent? Too complex.
+                    # We just stop sending new tokens.
+                if not hide_json:
+                    yield {"type": "token", "data": token}
             
             yield {"type": "events", "data": ["Assessment Agent Analyzing Symptoms...", "Triage Complete."]}
             
