@@ -19,6 +19,10 @@ class DoctorProfileCreate(BaseModel):
 
 @router.post("/profile")
 def create_or_update_doctor_profile(data: DoctorProfileCreate, current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    import re
+    # MDCN must follow the format MDCN-123456
+    is_valid_mdcn = bool(re.match(r"^MDCN-[0-9]{6}$", data.mdcn_number, re.IGNORECASE))
+    
     # Check if doctor profile exists
     doctor = db.query(Doctor).filter(Doctor.user_id == current_user.id).first()
     if doctor:
@@ -26,6 +30,7 @@ def create_or_update_doctor_profile(data: DoctorProfileCreate, current_user: Use
         doctor.bio = data.bio
         doctor.mdcn_number = data.mdcn_number
         doctor.location = f'SRID=4326;POINT({data.lng} {data.lat})'
+        doctor.is_verified = is_valid_mdcn
     else:
         doctor = Doctor(
             user_id=current_user.id,
@@ -33,12 +38,12 @@ def create_or_update_doctor_profile(data: DoctorProfileCreate, current_user: Use
             bio=data.bio,
             mdcn_number=data.mdcn_number,
             location=f'SRID=4326;POINT({data.lng} {data.lat})',
-            is_verified=True  # Auto-verify for prototype
+            is_verified=is_valid_mdcn
         )
         db.add(doctor)
     db.commit()
     db.refresh(doctor)
-    return {"message": "Profile saved", "doctor_id": doctor.id}
+    return {"message": "Profile saved", "doctor_id": doctor.id, "is_verified": doctor.is_verified}
 
 @router.get("/appointments")
 def get_doctor_appointments(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
