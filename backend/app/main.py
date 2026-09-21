@@ -11,10 +11,14 @@ from app.api import chat, booking, auth, doctor
 
 app = FastAPI(title="Daaba API", description="AI Healthcare Triage and Referral API")
 
-# Configure CORS
+# Configure CORS to allow Vercel deployments and local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js dev server
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000"
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
