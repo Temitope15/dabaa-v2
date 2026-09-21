@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class KnowledgeAgent:
-    def __init__(self, data_path: str = "app/data/nigerian_ailments.md", persist_directory: str = "./faiss_index"):
-        self.data_path = data_path
-        self.persist_directory = persist_directory
+    def __init__(self, data_path: str = None, persist_directory: str = None):
+        self.data_path = data_path or os.path.join(os.path.dirname(__file__), "../data/comprehensive_medical_knowledge.md")
+        self.persist_directory = persist_directory or os.path.join(os.path.dirname(__file__), "../../faiss_index")
         
         # Use fastembed (very lightweight, no torch required)
         self.embedding_function = FastEmbedEmbeddings()
