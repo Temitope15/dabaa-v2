@@ -4,8 +4,13 @@ import jwt
 import bcrypt
 import os
 
-# Ideally, read this from .env
-SECRET_KEY = os.environ.get("SECRET_KEY", "super_secret_jwt_key_for_daaba_poc")
+from dotenv import load_dotenv
+load_dotenv()
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+if not SECRET_KEY:
+    raise ValueError("No SECRET_KEY set for FastAPI application. Please set it in your .env file.")
+
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
