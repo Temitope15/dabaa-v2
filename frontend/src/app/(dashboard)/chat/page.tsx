@@ -30,11 +30,20 @@ export default function ChatPage() {
   
   const [errorToast, setErrorToast] = useState<string | null>(null);
 
+  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
+  const [tempApiKey, setTempApiKey] = useState('');
+
   useEffect(() => {
     const name = localStorage.getItem('user_name');
     if (name) {
       setUserName(name.split(' ')[0]);
     }
+    
+    const existingKey = localStorage.getItem('gemini_api_key');
+    if (!existingKey) {
+      setShowApiKeyModal(true);
+    }
+    
     setSlides([
       {
         id: 0,
@@ -43,6 +52,13 @@ export default function ChatPage() {
       }
     ]);
   }, []);
+
+  const saveApiKey = () => {
+    if (tempApiKey.trim()) {
+      localStorage.setItem('gemini_api_key', tempApiKey.trim());
+    }
+    setShowApiKeyModal(false);
+  };
 
   // Auto-hide toast after 5 seconds
   useEffect(() => {
@@ -109,6 +125,63 @@ export default function ChatPage() {
 
   return (
     <div className="flex h-full flex-col bg-slate-50 relative overflow-hidden">
+      
+      {/* API Key Modal */}
+      <AnimatePresence>
+        {showApiKeyModal && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden"
+            >
+              <div className="p-6 border-b border-slate-100">
+                <h2 className="text-xl font-bold text-slate-900">Add Gemini API Key</h2>
+                <p className="text-sm text-slate-500 mt-1">To ensure uninterrupted service and bypass global rate limits, please provide your own free Gemini API key.</p>
+              </div>
+              
+              <div className="p-6 space-y-4 bg-slate-50/50">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1">Your API Key</label>
+                  <input 
+                    type="password"
+                    value={tempApiKey}
+                    onChange={(e) => setTempApiKey(e.target.value)}
+                    placeholder="AIzaSy..."
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all font-mono text-sm"
+                  />
+                </div>
+                
+                <div className="bg-blue-50 text-blue-800 text-xs p-3 rounded-xl border border-blue-100">
+                  <p className="font-semibold mb-1">Don't have a key?</p>
+                  <p>Get one for free from Google AI Studio: <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-blue-900">aistudio.google.com</a></p>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+                <button 
+                  onClick={() => setShowApiKeyModal(false)}
+                  className="px-5 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-200 rounded-xl transition-colors"
+                >
+                  Skip for now
+                </button>
+                <button 
+                  onClick={saveApiKey}
+                  className="px-5 py-2.5 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-sm transition-colors"
+                >
+                  Save Key
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header - Make it floating when in map view */}
       <header className={`p-6 md:p-8 flex items-center justify-between z-50 ${currentSlide.isFinal ? 'absolute top-0 w-full pointer-events-none' : ''}`}>
         <div className="flex items-center gap-3 bg-white/85 backdrop-blur px-4 py-2 rounded-full shadow-sm border border-slate-100 pointer-events-auto">
