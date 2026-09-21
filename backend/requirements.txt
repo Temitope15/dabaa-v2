@@ -81,3 +81,5 @@ xxhash==4.0.1
 yarl==1.25.1
 zstandard==0.25.0
 fastembed==0.8.0
+PyJWT==2.8.0
+bcrypt==4.1.2
