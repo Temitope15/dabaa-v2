@@ -23,13 +23,16 @@ export default function Home() {
             <p className="text-slate-500 text-sm">Talk to Daaba to check your symptoms and find nearby doctors.</p>
           </Link>
 
-          <div className="flex flex-col items-center p-8 bg-white border border-slate-200 rounded-2xl shadow-sm opacity-50 cursor-not-allowed">
+          <Link 
+            href="/signup"
+            className="flex flex-col items-center p-8 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+          >
             <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4 text-2xl font-bold">
               👩‍⚕️
             </div>
             <h2 className="text-xl font-semibold text-slate-800 mb-2">I am a Doctor</h2>
-            <p className="text-slate-500 text-sm">Sign up and manage your availability. (Coming soon)</p>
-          </div>
+            <p className="text-slate-500 text-sm">Sign up and manage your availability.</p>
+          </Link>
         </div>
       </main>
     </div>
