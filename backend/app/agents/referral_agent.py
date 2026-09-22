@@ -54,54 +54,9 @@ class ReferralAgent:
             db.close()
 
     def get_fallback_hospitals(self, lat: float, lng: float, radius_km: int = 5) -> List[Dict[str, Any]]:
-        import requests
-        import math
-        
-        def haversine(lat1, lon1, lat2, lon2):
-            R = 6371
-            dlat = math.radians(lat2 - lat1)
-            dlon = math.radians(lon2 - lon1)
-            a = math.sin(dlat/2) * math.sin(dlat/2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon/2) * math.sin(dlon/2)
-            c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-            return R * c
-
-        try:
-            overpass_url = "http://overpass-api.de/api/interpreter"
-            radius_m = radius_km * 1000
-            overpass_query = f"[out:json];(node['amenity'='hospital'](around:{radius_m},{lat},{lng});way['amenity'='hospital'](around:{radius_m},{lat},{lng}););out center;"
-            response = requests.get(overpass_url, params={'data': overpass_query}, headers={'User-Agent': 'DaabaMedicalTriage/1.0'}, timeout=5)
-            data = response.json()
-            
-            hospitals = []
-            for el in data.get('elements', []):
-                name = el.get('tags', {}).get('name')
-                if not name: continue
-                
-                h_lat = el['lat'] if el['type'] == 'node' else el.get('center', {}).get('lat')
-                h_lng = el['lon'] if el['type'] == 'node' else el.get('center', {}).get('lon')
-                
-                if h_lat and h_lng:
-                    dist = haversine(lat, lng, h_lat, h_lng)
-                    hospitals.append({
-                        "id": f"osm-{el['id']}",
-                        "name": name,
-                        "specialty": "General Hospital",
-                        "bio": "Nearby public/private healthcare facility.",
-                        "lat": h_lat,
-                        "lng": h_lng,
-                        "distance_km": round(dist, 2),
-                        "is_hospital": True
-                    })
-            hospitals.sort(key=lambda x: x['distance_km'])
-            
-            if not hospitals:
-                raise Exception("OSM returned empty list")
-                
-            return hospitals[:5]
-        except Exception as e:
-            print(f"OSM Fallback failed: {e}")
-            # Guaranteed Mock Fallback for Prototype
-            return [{
+        # Instantly return fallback hospitals for prototype speed
+        return [
+            {
                 "id": "mock-hospital-1",
                 "name": "Lagos University Teaching Hospital (LUTH)",
                 "specialty": "General Hospital",
@@ -110,6 +65,17 @@ class ReferralAgent:
                 "lng": 3.3500,
                 "distance_km": 3.2,
                 "is_hospital": True
-            }]
+            },
+            {
+                "id": "mock-hospital-2",
+                "name": "Federal Medical Centre (FMC)",
+                "specialty": "Emergency Care",
+                "bio": "Top-tier federal facility equipped for trauma and surgical emergencies.",
+                "lat": 6.4950,
+                "lng": 3.3710,
+                "distance_km": 4.1,
+                "is_hospital": True
+            }
+        ]
 
 referral_agent = ReferralAgent()
