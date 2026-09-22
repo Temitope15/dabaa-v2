@@ -1,0 +1,5557 @@
+{
+    "Malaria": {
+        "symptoms": [
+            "high fever",
+            "chills",
+            "sweating",
+            "headache",
+            "nausea",
+            "vomiting"
+        ],
+        "specialty": "Internal Medicine",
+        "urgency": "high"
+    },
+    "Typhoid Fever": {
+        "symptoms": [
+            "prolonged high fever",
+            "fatigue",
+            "headache",
+            "nausea",
+            "abdominal pain",
+            "constipation or diarrhoea"
+        ],
+        "specialty": "Internal Medicine",
+        "urgency": "medium"
+    },
+    "Cholera": {
+        "symptoms": [
+            "severe watery diarrhoea",
+            "vomiting",
+            "leg cramps",
+            "rapid dehydration"
+        ],
+        "specialty": "Emergency Medicine",
+        "urgency": "high"
+    },
+    "Hypertension": {
+        "symptoms": [
+            "often asymptomatic severe headaches",
+            "shortness of breath",
+            "nosebleeds in hypertensive crisis"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Type 2 Diabetes": {
+        "symptoms": [
+            "increased thirst",
+            "frequent urination",
+            "increased hunger",
+            "fatigue",
+            "blurred vision"
+        ],
+        "specialty": "Endocrinologist",
+        "urgency": "medium"
+    },
+    "Asthma": {
+        "symptoms": [
+            "shortness of breath",
+            "chest tightness",
+            "wheezing",
+            "coughing attacks"
+        ],
+        "specialty": "Pulmonologist",
+        "urgency": "high"
+    },
+    "Peptic Ulcer Disease": {
+        "symptoms": [
+            "burning stomach pain",
+            "feeling of fullness",
+            "bloating",
+            "heartburn",
+            "nausea"
+        ],
+        "specialty": "Gastroenterologist",
+        "urgency": "high"
+    },
+    "Tuberculosis": {
+        "symptoms": [
+            "cough lasting >3 weeks",
+            "chest pain",
+            "coughing up blood",
+            "fatigue",
+            "night sweats"
+        ],
+        "specialty": "Pulmonologist",
+        "urgency": "medium"
+    },
+    "Pneumonia": {
+        "symptoms": [
+            "cough with phlegm",
+            "fever",
+            "chills",
+            "difficulty breathing"
+        ],
+        "specialty": "Pulmonologist",
+        "urgency": "medium"
+    },
+    "Appendicitis": {
+        "symptoms": [
+            "sudden pain on right side of lower abdomen",
+            "nausea",
+            "vomiting",
+            "fever"
+        ],
+        "specialty": "General Surgeon",
+        "urgency": "high"
+    },
+    "Sickle Cell Crisis": {
+        "symptoms": [
+            "severe pain in chest",
+            "abdomen",
+            "joints",
+            "bones fatigue"
+        ],
+        "specialty": "Hematologist",
+        "urgency": "high"
+    },
+    "Eczema": {
+        "symptoms": [
+            "dry",
+            "itchy",
+            "inflamed",
+            "rough patches of skin"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Glaucoma": {
+        "symptoms": [
+            "loss of peripheral vision",
+            "halos around lights",
+            "eye redness",
+            "severe eye pain"
+        ],
+        "specialty": "Ophthalmologist",
+        "urgency": "high"
+    },
+    "Myocardial Infarction": {
+        "symptoms": [
+            "pressure",
+            "tightness",
+            "pain in chest/arms spreading to neck/jaw",
+            "cold sweat"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Stroke": {
+        "symptoms": [
+            "sudden numbness/weakness in face/arm/leg",
+            "confusion",
+            "trouble speaking"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 001": {
+        "symptoms": [
+            "swelling",
+            "shortness of breath",
+            "weakness",
+            "dizziness",
+            "fatigue",
+            "vomiting"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 002": {
+        "symptoms": [
+            "chills",
+            "cough",
+            "weakness",
+            "pain",
+            "vomiting"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 003": {
+        "symptoms": [
+            "vomiting",
+            "confusion",
+            "weakness",
+            "cough",
+            "chills",
+            "dizziness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 004": {
+        "symptoms": [
+            "chills",
+            "vomiting",
+            "nausea",
+            "dizziness"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 005": {
+        "symptoms": [
+            "weakness",
+            "vomiting",
+            "chills",
+            "cough",
+            "confusion"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 006": {
+        "symptoms": [
+            "nausea",
+            "vomiting",
+            "confusion"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 007": {
+        "symptoms": [
+            "nausea",
+            "swelling",
+            "bleeding",
+            "fatigue"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 008": {
+        "symptoms": [
+            "chills",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 009": {
+        "symptoms": [
+            "pain",
+            "swelling",
+            "nausea",
+            "shortness of breath",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 010": {
+        "symptoms": [
+            "confusion",
+            "nausea",
+            "headache",
+            "cough",
+            "chills"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 011": {
+        "symptoms": [
+            "weakness",
+            "shortness of breath",
+            "cough",
+            "rash",
+            "bleeding",
+            "fatigue",
+            "vomiting"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 012": {
+        "symptoms": [
+            "confusion",
+            "headache",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 013": {
+        "symptoms": [
+            "pain",
+            "fever",
+            "swelling",
+            "rash",
+            "chills",
+            "bleeding"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 014": {
+        "symptoms": [
+            "vomiting",
+            "fatigue",
+            "bleeding",
+            "shortness of breath",
+            "chills"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 015": {
+        "symptoms": [
+            "confusion",
+            "shortness of breath",
+            "fatigue",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 016": {
+        "symptoms": [
+            "bleeding",
+            "shortness of breath",
+            "weakness",
+            "swelling",
+            "fever",
+            "chills",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 017": {
+        "symptoms": [
+            "swelling",
+            "chills",
+            "weakness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 018": {
+        "symptoms": [
+            "nausea",
+            "fatigue",
+            "rash",
+            "pain",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 019": {
+        "symptoms": [
+            "confusion",
+            "dizziness",
+            "vomiting",
+            "bleeding",
+            "pain",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 020": {
+        "symptoms": [
+            "fever",
+            "confusion",
+            "cough"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 021": {
+        "symptoms": [
+            "weakness",
+            "cough",
+            "bleeding",
+            "headache",
+            "vomiting",
+            "dizziness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 022": {
+        "symptoms": [
+            "dizziness",
+            "shortness of breath",
+            "chills",
+            "cough",
+            "swelling",
+            "confusion",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 023": {
+        "symptoms": [
+            "chills",
+            "swelling",
+            "pain",
+            "bleeding",
+            "shortness of breath",
+            "headache"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 024": {
+        "symptoms": [
+            "swelling",
+            "vomiting",
+            "rash",
+            "pain",
+            "nausea",
+            "chills"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 025": {
+        "symptoms": [
+            "weakness",
+            "nausea",
+            "vomiting",
+            "pain",
+            "chills"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 026": {
+        "symptoms": [
+            "confusion",
+            "pain",
+            "headache",
+            "fatigue"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 027": {
+        "symptoms": [
+            "weakness",
+            "bleeding",
+            "swelling",
+            "rash",
+            "pain",
+            "vomiting",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 028": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "chills",
+            "swelling",
+            "bleeding",
+            "headache",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 029": {
+        "symptoms": [
+            "chills",
+            "weakness",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 030": {
+        "symptoms": [
+            "dizziness",
+            "fatigue",
+            "rash"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 031": {
+        "symptoms": [
+            "shortness of breath",
+            "pain",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 032": {
+        "symptoms": [
+            "swelling",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 033": {
+        "symptoms": [
+            "chills",
+            "pain",
+            "fever",
+            "cough"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 034": {
+        "symptoms": [
+            "cough",
+            "bleeding",
+            "shortness of breath",
+            "weakness",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 035": {
+        "symptoms": [
+            "bleeding",
+            "swelling",
+            "vomiting",
+            "dizziness",
+            "rash",
+            "nausea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 036": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "nausea",
+            "vomiting",
+            "cough",
+            "fever",
+            "dizziness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 037": {
+        "symptoms": [
+            "nausea",
+            "headache",
+            "cough",
+            "pain",
+            "fever",
+            "fatigue"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 038": {
+        "symptoms": [
+            "chills",
+            "shortness of breath",
+            "fatigue",
+            "pain",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 039": {
+        "symptoms": [
+            "headache",
+            "dizziness",
+            "nausea",
+            "fatigue",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 040": {
+        "symptoms": [
+            "chills",
+            "pain",
+            "dizziness",
+            "bleeding",
+            "weakness",
+            "cough",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 041": {
+        "symptoms": [
+            "cough",
+            "vomiting",
+            "weakness",
+            "fatigue"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 042": {
+        "symptoms": [
+            "cough",
+            "chills",
+            "pain",
+            "fatigue",
+            "nausea"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 043": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "fever",
+            "pain"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 044": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "pain",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 045": {
+        "symptoms": [
+            "fatigue",
+            "chills",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 046": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "cough",
+            "headache",
+            "nausea",
+            "weakness",
+            "shortness of breath"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 047": {
+        "symptoms": [
+            "rash",
+            "pain",
+            "fatigue",
+            "cough",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 048": {
+        "symptoms": [
+            "fever",
+            "dizziness",
+            "chills"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 049": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "swelling",
+            "dizziness",
+            "weakness",
+            "chills",
+            "rash"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 050": {
+        "symptoms": [
+            "rash",
+            "vomiting",
+            "nausea",
+            "confusion"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 051": {
+        "symptoms": [
+            "nausea",
+            "swelling",
+            "fever",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 052": {
+        "symptoms": [
+            "shortness of breath",
+            "chills",
+            "dizziness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 053": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "bleeding",
+            "chills"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 054": {
+        "symptoms": [
+            "shortness of breath",
+            "dizziness",
+            "headache",
+            "fever",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 055": {
+        "symptoms": [
+            "cough",
+            "chills",
+            "swelling",
+            "rash",
+            "fever",
+            "confusion",
+            "bleeding"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 056": {
+        "symptoms": [
+            "chills",
+            "headache",
+            "fatigue",
+            "pain",
+            "swelling",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 057": {
+        "symptoms": [
+            "vomiting",
+            "cough",
+            "bleeding",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 058": {
+        "symptoms": [
+            "nausea",
+            "bleeding",
+            "fever"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 059": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "vomiting",
+            "dizziness",
+            "pain",
+            "confusion",
+            "nausea"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 060": {
+        "symptoms": [
+            "fatigue",
+            "rash",
+            "chills",
+            "headache",
+            "swelling",
+            "vomiting",
+            "shortness of breath"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 061": {
+        "symptoms": [
+            "cough",
+            "nausea",
+            "weakness",
+            "fatigue",
+            "swelling",
+            "chills"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 062": {
+        "symptoms": [
+            "nausea",
+            "headache",
+            "fatigue"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 063": {
+        "symptoms": [
+            "nausea",
+            "headache",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 064": {
+        "symptoms": [
+            "headache",
+            "bleeding",
+            "vomiting",
+            "swelling"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 065": {
+        "symptoms": [
+            "chills",
+            "fever",
+            "shortness of breath",
+            "bleeding",
+            "cough"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 066": {
+        "symptoms": [
+            "cough",
+            "pain",
+            "chills",
+            "fever",
+            "bleeding",
+            "headache",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 067": {
+        "symptoms": [
+            "bleeding",
+            "weakness",
+            "chills",
+            "fever",
+            "shortness of breath"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 068": {
+        "symptoms": [
+            "rash",
+            "dizziness",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 069": {
+        "symptoms": [
+            "headache",
+            "cough",
+            "bleeding"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 070": {
+        "symptoms": [
+            "vomiting",
+            "chills",
+            "nausea",
+            "fever",
+            "cough",
+            "fatigue",
+            "pain"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 071": {
+        "symptoms": [
+            "pain",
+            "headache",
+            "vomiting",
+            "bleeding",
+            "swelling",
+            "chills",
+            "fever"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 072": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "confusion",
+            "vomiting",
+            "weakness"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 073": {
+        "symptoms": [
+            "nausea",
+            "weakness",
+            "swelling",
+            "headache",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 074": {
+        "symptoms": [
+            "weakness",
+            "cough",
+            "confusion",
+            "nausea",
+            "headache",
+            "bleeding",
+            "dizziness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 075": {
+        "symptoms": [
+            "confusion",
+            "bleeding",
+            "rash",
+            "fatigue",
+            "weakness",
+            "fever",
+            "swelling"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 076": {
+        "symptoms": [
+            "vomiting",
+            "chills",
+            "pain"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 077": {
+        "symptoms": [
+            "headache",
+            "dizziness",
+            "bleeding",
+            "vomiting",
+            "rash",
+            "chills"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 078": {
+        "symptoms": [
+            "shortness of breath",
+            "swelling",
+            "chills",
+            "rash",
+            "dizziness",
+            "bleeding",
+            "pain"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 079": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "chills",
+            "shortness of breath"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 080": {
+        "symptoms": [
+            "headache",
+            "confusion",
+            "nausea",
+            "shortness of breath"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 081": {
+        "symptoms": [
+            "weakness",
+            "rash",
+            "nausea",
+            "fever",
+            "shortness of breath",
+            "cough",
+            "fatigue"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 082": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "nausea",
+            "weakness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 083": {
+        "symptoms": [
+            "shortness of breath",
+            "cough",
+            "chills",
+            "confusion",
+            "bleeding",
+            "headache",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 084": {
+        "symptoms": [
+            "confusion",
+            "dizziness",
+            "chills",
+            "cough",
+            "shortness of breath",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 085": {
+        "symptoms": [
+            "pain",
+            "fatigue",
+            "headache",
+            "cough",
+            "nausea",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 086": {
+        "symptoms": [
+            "rash",
+            "headache",
+            "confusion"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 087": {
+        "symptoms": [
+            "chills",
+            "fatigue",
+            "dizziness",
+            "cough",
+            "nausea",
+            "rash",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 088": {
+        "symptoms": [
+            "fever",
+            "chills",
+            "fatigue",
+            "nausea"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 089": {
+        "symptoms": [
+            "chills",
+            "headache",
+            "bleeding",
+            "shortness of breath",
+            "rash",
+            "fever",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 090": {
+        "symptoms": [
+            "dizziness",
+            "confusion",
+            "nausea"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 091": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "nausea",
+            "bleeding",
+            "pain",
+            "headache"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 092": {
+        "symptoms": [
+            "rash",
+            "swelling",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 093": {
+        "symptoms": [
+            "weakness",
+            "nausea",
+            "fever"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 094": {
+        "symptoms": [
+            "weakness",
+            "vomiting",
+            "headache",
+            "chills",
+            "swelling"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 095": {
+        "symptoms": [
+            "headache",
+            "fatigue",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 096": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "vomiting",
+            "swelling",
+            "nausea",
+            "fatigue"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 097": {
+        "symptoms": [
+            "rash",
+            "pain",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 098": {
+        "symptoms": [
+            "chills",
+            "pain",
+            "dizziness",
+            "rash",
+            "nausea",
+            "weakness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 099": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "headache",
+            "nausea",
+            "swelling",
+            "dizziness",
+            "chills"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 100": {
+        "symptoms": [
+            "shortness of breath",
+            "cough",
+            "chills",
+            "nausea"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 101": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "chills",
+            "fatigue",
+            "rash",
+            "cough"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 102": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "fatigue"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 103": {
+        "symptoms": [
+            "chills",
+            "cough",
+            "vomiting",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 104": {
+        "symptoms": [
+            "chills",
+            "swelling",
+            "fatigue",
+            "shortness of breath",
+            "cough"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 105": {
+        "symptoms": [
+            "fatigue",
+            "vomiting",
+            "rash",
+            "nausea",
+            "swelling",
+            "bleeding",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 106": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "swelling",
+            "fatigue",
+            "headache",
+            "cough"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 107": {
+        "symptoms": [
+            "shortness of breath",
+            "cough",
+            "nausea",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 108": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 109": {
+        "symptoms": [
+            "dizziness",
+            "confusion",
+            "chills",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 110": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "dizziness",
+            "cough"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 111": {
+        "symptoms": [
+            "dizziness",
+            "swelling",
+            "headache",
+            "fever",
+            "fatigue",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 112": {
+        "symptoms": [
+            "confusion",
+            "headache",
+            "cough",
+            "swelling",
+            "pain"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 113": {
+        "symptoms": [
+            "rash",
+            "nausea",
+            "confusion",
+            "headache",
+            "dizziness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 114": {
+        "symptoms": [
+            "headache",
+            "dizziness",
+            "bleeding",
+            "swelling",
+            "rash"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 115": {
+        "symptoms": [
+            "shortness of breath",
+            "dizziness",
+            "bleeding",
+            "chills",
+            "rash",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 116": {
+        "symptoms": [
+            "swelling",
+            "chills",
+            "vomiting",
+            "confusion",
+            "shortness of breath",
+            "pain"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 117": {
+        "symptoms": [
+            "rash",
+            "headache",
+            "pain",
+            "shortness of breath",
+            "confusion",
+            "fatigue",
+            "dizziness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 118": {
+        "symptoms": [
+            "bleeding",
+            "rash",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 119": {
+        "symptoms": [
+            "headache",
+            "nausea",
+            "chills",
+            "fatigue",
+            "fever",
+            "bleeding",
+            "swelling"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 120": {
+        "symptoms": [
+            "weakness",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 121": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "chills",
+            "nausea",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 122": {
+        "symptoms": [
+            "bleeding",
+            "nausea",
+            "fatigue",
+            "vomiting",
+            "swelling"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 123": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "headache",
+            "dizziness",
+            "fever",
+            "weakness",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 124": {
+        "symptoms": [
+            "headache",
+            "pain",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 125": {
+        "symptoms": [
+            "fatigue",
+            "fever",
+            "shortness of breath",
+            "dizziness",
+            "confusion",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 126": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 127": {
+        "symptoms": [
+            "vomiting",
+            "bleeding",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 128": {
+        "symptoms": [
+            "bleeding",
+            "fatigue",
+            "confusion",
+            "fever",
+            "vomiting",
+            "cough",
+            "dizziness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 129": {
+        "symptoms": [
+            "headache",
+            "bleeding",
+            "swelling",
+            "nausea",
+            "fatigue",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 130": {
+        "symptoms": [
+            "fatigue",
+            "vomiting",
+            "chills",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 131": {
+        "symptoms": [
+            "bleeding",
+            "pain",
+            "shortness of breath",
+            "weakness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 132": {
+        "symptoms": [
+            "fatigue",
+            "rash",
+            "vomiting"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 133": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "nausea",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 134": {
+        "symptoms": [
+            "weakness",
+            "pain",
+            "cough",
+            "nausea",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 135": {
+        "symptoms": [
+            "weakness",
+            "fever",
+            "fatigue",
+            "bleeding",
+            "pain",
+            "shortness of breath"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 136": {
+        "symptoms": [
+            "bleeding",
+            "swelling",
+            "pain"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 137": {
+        "symptoms": [
+            "swelling",
+            "bleeding",
+            "fatigue",
+            "rash"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 138": {
+        "symptoms": [
+            "vomiting",
+            "swelling",
+            "bleeding",
+            "nausea",
+            "rash",
+            "dizziness",
+            "fever"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 139": {
+        "symptoms": [
+            "dizziness",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 140": {
+        "symptoms": [
+            "rash",
+            "fever",
+            "nausea",
+            "swelling",
+            "vomiting",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 141": {
+        "symptoms": [
+            "confusion",
+            "weakness",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 142": {
+        "symptoms": [
+            "fever",
+            "rash",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 143": {
+        "symptoms": [
+            "fever",
+            "pain",
+            "dizziness",
+            "fatigue",
+            "nausea"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 144": {
+        "symptoms": [
+            "fatigue",
+            "swelling",
+            "pain",
+            "rash",
+            "shortness of breath",
+            "dizziness",
+            "fever"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 145": {
+        "symptoms": [
+            "pain",
+            "fever",
+            "nausea",
+            "fatigue"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 146": {
+        "symptoms": [
+            "headache",
+            "chills",
+            "vomiting",
+            "pain",
+            "rash",
+            "bleeding"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 147": {
+        "symptoms": [
+            "bleeding",
+            "rash",
+            "swelling"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 148": {
+        "symptoms": [
+            "rash",
+            "vomiting",
+            "fever",
+            "bleeding",
+            "chills",
+            "headache",
+            "cough"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 149": {
+        "symptoms": [
+            "vomiting",
+            "rash",
+            "cough",
+            "confusion",
+            "fever"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 150": {
+        "symptoms": [
+            "fatigue",
+            "cough",
+            "headache",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 151": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "shortness of breath",
+            "cough",
+            "rash",
+            "pain",
+            "dizziness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 152": {
+        "symptoms": [
+            "rash",
+            "pain",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 153": {
+        "symptoms": [
+            "bleeding",
+            "fatigue",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 154": {
+        "symptoms": [
+            "chills",
+            "fatigue",
+            "fever",
+            "dizziness",
+            "confusion",
+            "nausea",
+            "rash"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 155": {
+        "symptoms": [
+            "fever",
+            "weakness",
+            "pain",
+            "swelling",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 156": {
+        "symptoms": [
+            "rash",
+            "nausea",
+            "headache",
+            "fatigue",
+            "shortness of breath"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 157": {
+        "symptoms": [
+            "headache",
+            "fever",
+            "cough",
+            "bleeding",
+            "dizziness"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 158": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "vomiting",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 159": {
+        "symptoms": [
+            "vomiting",
+            "bleeding",
+            "nausea",
+            "swelling",
+            "confusion",
+            "cough",
+            "pain"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 160": {
+        "symptoms": [
+            "rash",
+            "bleeding",
+            "pain",
+            "vomiting",
+            "cough"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 161": {
+        "symptoms": [
+            "fatigue",
+            "fever",
+            "confusion",
+            "pain",
+            "swelling",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 162": {
+        "symptoms": [
+            "shortness of breath",
+            "bleeding",
+            "confusion",
+            "fever",
+            "weakness",
+            "chills"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 163": {
+        "symptoms": [
+            "nausea",
+            "bleeding",
+            "dizziness",
+            "vomiting",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 164": {
+        "symptoms": [
+            "nausea",
+            "shortness of breath",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 165": {
+        "symptoms": [
+            "chills",
+            "rash",
+            "nausea"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 166": {
+        "symptoms": [
+            "vomiting",
+            "shortness of breath",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 167": {
+        "symptoms": [
+            "bleeding",
+            "rash",
+            "shortness of breath",
+            "dizziness",
+            "fatigue"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 168": {
+        "symptoms": [
+            "weakness",
+            "chills",
+            "rash",
+            "fatigue",
+            "bleeding",
+            "headache",
+            "swelling"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 169": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "chills"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 170": {
+        "symptoms": [
+            "chills",
+            "cough",
+            "swelling",
+            "bleeding",
+            "pain",
+            "nausea"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 171": {
+        "symptoms": [
+            "pain",
+            "shortness of breath",
+            "nausea",
+            "fever",
+            "cough"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 172": {
+        "symptoms": [
+            "rash",
+            "bleeding",
+            "dizziness",
+            "confusion",
+            "chills"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 173": {
+        "symptoms": [
+            "cough",
+            "bleeding",
+            "headache",
+            "fatigue"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 174": {
+        "symptoms": [
+            "chills",
+            "confusion",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 175": {
+        "symptoms": [
+            "cough",
+            "fatigue",
+            "chills",
+            "confusion"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 176": {
+        "symptoms": [
+            "fever",
+            "chills",
+            "vomiting",
+            "confusion",
+            "fatigue",
+            "pain"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 177": {
+        "symptoms": [
+            "dizziness",
+            "confusion",
+            "cough"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 178": {
+        "symptoms": [
+            "shortness of breath",
+            "nausea",
+            "swelling",
+            "pain",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 179": {
+        "symptoms": [
+            "pain",
+            "fatigue",
+            "swelling",
+            "shortness of breath",
+            "chills"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 180": {
+        "symptoms": [
+            "chills",
+            "headache",
+            "nausea",
+            "confusion"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 181": {
+        "symptoms": [
+            "nausea",
+            "dizziness",
+            "vomiting",
+            "fatigue",
+            "shortness of breath",
+            "cough"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 182": {
+        "symptoms": [
+            "fever",
+            "chills",
+            "fatigue",
+            "nausea",
+            "headache",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 183": {
+        "symptoms": [
+            "pain",
+            "weakness",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 184": {
+        "symptoms": [
+            "fever",
+            "rash",
+            "pain",
+            "cough",
+            "dizziness",
+            "vomiting",
+            "weakness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 185": {
+        "symptoms": [
+            "headache",
+            "shortness of breath",
+            "chills",
+            "vomiting",
+            "rash",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 186": {
+        "symptoms": [
+            "cough",
+            "chills",
+            "fatigue",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 187": {
+        "symptoms": [
+            "fatigue",
+            "fever",
+            "chills",
+            "vomiting",
+            "weakness",
+            "headache",
+            "bleeding"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 188": {
+        "symptoms": [
+            "pain",
+            "shortness of breath",
+            "fever",
+            "chills",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 189": {
+        "symptoms": [
+            "bleeding",
+            "vomiting",
+            "weakness",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 190": {
+        "symptoms": [
+            "nausea",
+            "fever",
+            "shortness of breath",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 191": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "pain",
+            "bleeding",
+            "chills",
+            "nausea",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 192": {
+        "symptoms": [
+            "vomiting",
+            "chills",
+            "bleeding",
+            "pain",
+            "cough"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 193": {
+        "symptoms": [
+            "dizziness",
+            "pain",
+            "shortness of breath",
+            "chills",
+            "nausea",
+            "cough"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 194": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "confusion",
+            "rash",
+            "swelling",
+            "nausea"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 195": {
+        "symptoms": [
+            "cough",
+            "shortness of breath",
+            "fever",
+            "swelling",
+            "nausea",
+            "fatigue",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 196": {
+        "symptoms": [
+            "fatigue",
+            "weakness",
+            "swelling",
+            "pain",
+            "nausea",
+            "headache",
+            "shortness of breath"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 197": {
+        "symptoms": [
+            "rash",
+            "fatigue",
+            "pain",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 198": {
+        "symptoms": [
+            "confusion",
+            "bleeding",
+            "nausea",
+            "dizziness",
+            "headache"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 199": {
+        "symptoms": [
+            "fever",
+            "rash",
+            "chills",
+            "fatigue",
+            "dizziness",
+            "swelling",
+            "weakness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 200": {
+        "symptoms": [
+            "rash",
+            "cough",
+            "swelling",
+            "fever",
+            "dizziness",
+            "confusion",
+            "shortness of breath"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 201": {
+        "symptoms": [
+            "rash",
+            "dizziness",
+            "nausea",
+            "vomiting",
+            "weakness",
+            "confusion",
+            "pain"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 202": {
+        "symptoms": [
+            "shortness of breath",
+            "bleeding",
+            "pain",
+            "weakness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 203": {
+        "symptoms": [
+            "chills",
+            "fever",
+            "shortness of breath",
+            "bleeding",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 204": {
+        "symptoms": [
+            "dizziness",
+            "fatigue",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 205": {
+        "symptoms": [
+            "weakness",
+            "nausea",
+            "dizziness",
+            "chills",
+            "rash",
+            "cough",
+            "shortness of breath"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 206": {
+        "symptoms": [
+            "vomiting",
+            "fatigue",
+            "chills",
+            "shortness of breath",
+            "fever",
+            "weakness",
+            "nausea"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 207": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "fever",
+            "confusion",
+            "dizziness",
+            "vomiting",
+            "shortness of breath"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 208": {
+        "symptoms": [
+            "fever",
+            "vomiting",
+            "swelling",
+            "confusion",
+            "headache"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 209": {
+        "symptoms": [
+            "weakness",
+            "fever",
+            "shortness of breath",
+            "pain"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 210": {
+        "symptoms": [
+            "dizziness",
+            "rash",
+            "weakness",
+            "shortness of breath",
+            "chills",
+            "fever",
+            "bleeding"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 211": {
+        "symptoms": [
+            "confusion",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 212": {
+        "symptoms": [
+            "cough",
+            "rash",
+            "pain",
+            "headache",
+            "dizziness",
+            "shortness of breath"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 213": {
+        "symptoms": [
+            "rash",
+            "pain",
+            "swelling",
+            "nausea",
+            "bleeding",
+            "chills",
+            "confusion"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 214": {
+        "symptoms": [
+            "vomiting",
+            "dizziness",
+            "weakness",
+            "fatigue",
+            "headache"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 215": {
+        "symptoms": [
+            "dizziness",
+            "nausea",
+            "fatigue",
+            "shortness of breath",
+            "cough",
+            "bleeding",
+            "headache"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 216": {
+        "symptoms": [
+            "nausea",
+            "fever",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 217": {
+        "symptoms": [
+            "cough",
+            "nausea",
+            "chills",
+            "pain",
+            "rash",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 218": {
+        "symptoms": [
+            "fever",
+            "nausea",
+            "dizziness",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 219": {
+        "symptoms": [
+            "vomiting",
+            "dizziness",
+            "weakness",
+            "rash",
+            "pain",
+            "fatigue",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 220": {
+        "symptoms": [
+            "headache",
+            "shortness of breath",
+            "fever",
+            "weakness",
+            "swelling"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 221": {
+        "symptoms": [
+            "bleeding",
+            "weakness",
+            "fatigue",
+            "headache"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 222": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "headache",
+            "swelling",
+            "fatigue",
+            "vomiting",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 223": {
+        "symptoms": [
+            "confusion",
+            "cough",
+            "dizziness",
+            "shortness of breath",
+            "nausea",
+            "fever"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 224": {
+        "symptoms": [
+            "rash",
+            "vomiting",
+            "chills",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 225": {
+        "symptoms": [
+            "nausea",
+            "vomiting",
+            "confusion"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 226": {
+        "symptoms": [
+            "cough",
+            "swelling",
+            "rash",
+            "nausea",
+            "pain",
+            "vomiting",
+            "fever"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 227": {
+        "symptoms": [
+            "weakness",
+            "vomiting",
+            "pain",
+            "cough"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 228": {
+        "symptoms": [
+            "cough",
+            "confusion",
+            "fever",
+            "fatigue",
+            "headache",
+            "nausea"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 229": {
+        "symptoms": [
+            "cough",
+            "chills",
+            "rash"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 230": {
+        "symptoms": [
+            "headache",
+            "shortness of breath",
+            "nausea",
+            "fever",
+            "swelling",
+            "fatigue",
+            "pain"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 231": {
+        "symptoms": [
+            "chills",
+            "bleeding",
+            "headache",
+            "cough",
+            "shortness of breath",
+            "rash",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 232": {
+        "symptoms": [
+            "nausea",
+            "bleeding",
+            "vomiting",
+            "headache",
+            "swelling",
+            "chills",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 233": {
+        "symptoms": [
+            "vomiting",
+            "pain",
+            "dizziness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 234": {
+        "symptoms": [
+            "headache",
+            "pain",
+            "dizziness",
+            "chills",
+            "shortness of breath",
+            "swelling",
+            "confusion"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 235": {
+        "symptoms": [
+            "nausea",
+            "cough",
+            "vomiting",
+            "fatigue",
+            "chills"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 236": {
+        "symptoms": [
+            "confusion",
+            "vomiting",
+            "rash"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 237": {
+        "symptoms": [
+            "cough",
+            "rash",
+            "fatigue",
+            "shortness of breath"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 238": {
+        "symptoms": [
+            "vomiting",
+            "confusion",
+            "fatigue",
+            "shortness of breath",
+            "fever",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 239": {
+        "symptoms": [
+            "dizziness",
+            "fatigue",
+            "confusion",
+            "headache",
+            "shortness of breath",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 240": {
+        "symptoms": [
+            "shortness of breath",
+            "chills",
+            "fatigue"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 241": {
+        "symptoms": [
+            "headache",
+            "cough",
+            "swelling",
+            "dizziness",
+            "rash"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 242": {
+        "symptoms": [
+            "dizziness",
+            "fever",
+            "vomiting",
+            "headache",
+            "fatigue",
+            "cough"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 243": {
+        "symptoms": [
+            "confusion",
+            "swelling",
+            "rash",
+            "fatigue",
+            "fever"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 244": {
+        "symptoms": [
+            "chills",
+            "rash",
+            "shortness of breath",
+            "bleeding",
+            "fever",
+            "vomiting",
+            "weakness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 245": {
+        "symptoms": [
+            "cough",
+            "confusion",
+            "weakness",
+            "fever",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 246": {
+        "symptoms": [
+            "nausea",
+            "fatigue",
+            "rash",
+            "confusion",
+            "shortness of breath",
+            "bleeding",
+            "fever"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 247": {
+        "symptoms": [
+            "fatigue",
+            "confusion",
+            "shortness of breath",
+            "headache",
+            "vomiting",
+            "pain",
+            "rash"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 248": {
+        "symptoms": [
+            "rash",
+            "vomiting",
+            "swelling",
+            "weakness"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 249": {
+        "symptoms": [
+            "dizziness",
+            "headache",
+            "confusion",
+            "bleeding",
+            "fatigue",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 250": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "weakness",
+            "swelling",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 251": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "rash",
+            "vomiting",
+            "shortness of breath",
+            "fatigue",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 252": {
+        "symptoms": [
+            "nausea",
+            "confusion",
+            "rash",
+            "dizziness",
+            "shortness of breath",
+            "fatigue"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 253": {
+        "symptoms": [
+            "swelling",
+            "cough",
+            "shortness of breath",
+            "rash",
+            "vomiting",
+            "nausea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 254": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "cough"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 255": {
+        "symptoms": [
+            "confusion",
+            "chills",
+            "pain",
+            "swelling",
+            "headache"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 256": {
+        "symptoms": [
+            "fatigue",
+            "chills",
+            "rash",
+            "fever",
+            "pain",
+            "weakness",
+            "dizziness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 257": {
+        "symptoms": [
+            "pain",
+            "nausea",
+            "shortness of breath",
+            "chills",
+            "weakness",
+            "vomiting",
+            "confusion"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 258": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "pain",
+            "shortness of breath",
+            "rash",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 259": {
+        "symptoms": [
+            "weakness",
+            "shortness of breath",
+            "dizziness",
+            "rash",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 260": {
+        "symptoms": [
+            "dizziness",
+            "fever",
+            "headache"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 261": {
+        "symptoms": [
+            "dizziness",
+            "rash",
+            "fever"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 262": {
+        "symptoms": [
+            "shortness of breath",
+            "confusion",
+            "pain"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 263": {
+        "symptoms": [
+            "fever",
+            "vomiting",
+            "fatigue",
+            "chills"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 264": {
+        "symptoms": [
+            "weakness",
+            "nausea",
+            "bleeding",
+            "fever",
+            "cough",
+            "chills",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 265": {
+        "symptoms": [
+            "rash",
+            "weakness",
+            "vomiting",
+            "chills",
+            "pain",
+            "bleeding"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 266": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "shortness of breath",
+            "confusion",
+            "dizziness",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 267": {
+        "symptoms": [
+            "headache",
+            "vomiting",
+            "chills"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 268": {
+        "symptoms": [
+            "shortness of breath",
+            "headache",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 269": {
+        "symptoms": [
+            "cough",
+            "headache",
+            "vomiting",
+            "swelling",
+            "rash",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 270": {
+        "symptoms": [
+            "fever",
+            "chills",
+            "nausea",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 271": {
+        "symptoms": [
+            "swelling",
+            "bleeding",
+            "nausea"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 272": {
+        "symptoms": [
+            "cough",
+            "weakness",
+            "confusion",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 273": {
+        "symptoms": [
+            "shortness of breath",
+            "dizziness",
+            "chills",
+            "nausea",
+            "headache",
+            "pain"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 274": {
+        "symptoms": [
+            "nausea",
+            "chills",
+            "shortness of breath"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 275": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "rash",
+            "headache",
+            "weakness"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 276": {
+        "symptoms": [
+            "chills",
+            "bleeding",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 277": {
+        "symptoms": [
+            "swelling",
+            "dizziness",
+            "fatigue",
+            "weakness",
+            "nausea",
+            "fever",
+            "bleeding"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 278": {
+        "symptoms": [
+            "headache",
+            "bleeding",
+            "swelling",
+            "fatigue",
+            "pain"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 279": {
+        "symptoms": [
+            "fever",
+            "fatigue",
+            "chills",
+            "headache",
+            "pain",
+            "shortness of breath",
+            "weakness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 280": {
+        "symptoms": [
+            "cough",
+            "fever",
+            "weakness",
+            "chills",
+            "headache",
+            "rash"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 281": {
+        "symptoms": [
+            "shortness of breath",
+            "pain",
+            "rash",
+            "swelling",
+            "weakness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 282": {
+        "symptoms": [
+            "shortness of breath",
+            "bleeding",
+            "dizziness",
+            "weakness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 283": {
+        "symptoms": [
+            "fever",
+            "dizziness",
+            "fatigue"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 284": {
+        "symptoms": [
+            "rash",
+            "nausea",
+            "swelling",
+            "cough",
+            "headache",
+            "bleeding",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 285": {
+        "symptoms": [
+            "confusion",
+            "dizziness",
+            "fatigue",
+            "pain"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 286": {
+        "symptoms": [
+            "chills",
+            "confusion",
+            "pain",
+            "cough"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 287": {
+        "symptoms": [
+            "fever",
+            "weakness",
+            "swelling",
+            "bleeding",
+            "rash",
+            "shortness of breath",
+            "nausea"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 288": {
+        "symptoms": [
+            "pain",
+            "weakness",
+            "rash",
+            "cough",
+            "dizziness",
+            "shortness of breath",
+            "vomiting"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 289": {
+        "symptoms": [
+            "nausea",
+            "weakness",
+            "pain",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 290": {
+        "symptoms": [
+            "dizziness",
+            "swelling",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 291": {
+        "symptoms": [
+            "pain",
+            "swelling",
+            "fever",
+            "chills",
+            "fatigue",
+            "confusion"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 292": {
+        "symptoms": [
+            "fatigue",
+            "rash",
+            "pain",
+            "headache"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 293": {
+        "symptoms": [
+            "shortness of breath",
+            "nausea",
+            "fever",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 294": {
+        "symptoms": [
+            "cough",
+            "fatigue",
+            "bleeding",
+            "weakness",
+            "pain"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 295": {
+        "symptoms": [
+            "fever",
+            "swelling",
+            "weakness",
+            "cough",
+            "rash",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 296": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "vomiting"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 297": {
+        "symptoms": [
+            "headache",
+            "chills",
+            "rash",
+            "swelling",
+            "vomiting",
+            "nausea",
+            "shortness of breath"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 298": {
+        "symptoms": [
+            "headache",
+            "vomiting",
+            "swelling",
+            "bleeding",
+            "fever",
+            "confusion",
+            "fatigue"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 299": {
+        "symptoms": [
+            "dizziness",
+            "fever",
+            "swelling",
+            "rash",
+            "shortness of breath",
+            "chills"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 300": {
+        "symptoms": [
+            "rash",
+            "bleeding",
+            "swelling",
+            "weakness",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 301": {
+        "symptoms": [
+            "weakness",
+            "bleeding",
+            "vomiting",
+            "cough",
+            "fatigue",
+            "chills",
+            "nausea"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 302": {
+        "symptoms": [
+            "shortness of breath",
+            "fatigue",
+            "nausea",
+            "rash"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 303": {
+        "symptoms": [
+            "rash",
+            "weakness",
+            "fever",
+            "vomiting",
+            "pain",
+            "cough",
+            "swelling"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 304": {
+        "symptoms": [
+            "rash",
+            "fever",
+            "bleeding",
+            "shortness of breath",
+            "weakness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 305": {
+        "symptoms": [
+            "shortness of breath",
+            "swelling",
+            "chills",
+            "rash"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 306": {
+        "symptoms": [
+            "chills",
+            "fatigue",
+            "swelling",
+            "nausea",
+            "pain",
+            "headache",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 307": {
+        "symptoms": [
+            "fatigue",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 308": {
+        "symptoms": [
+            "chills",
+            "confusion",
+            "weakness",
+            "vomiting",
+            "fatigue"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 309": {
+        "symptoms": [
+            "confusion",
+            "headache",
+            "dizziness",
+            "weakness",
+            "pain",
+            "vomiting",
+            "chills"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 310": {
+        "symptoms": [
+            "chills",
+            "nausea",
+            "rash",
+            "vomiting",
+            "shortness of breath",
+            "fever",
+            "dizziness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 311": {
+        "symptoms": [
+            "cough",
+            "headache",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 312": {
+        "symptoms": [
+            "rash",
+            "chills",
+            "pain",
+            "headache",
+            "bleeding",
+            "shortness of breath",
+            "fatigue"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 313": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "headache",
+            "bleeding"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 314": {
+        "symptoms": [
+            "fever",
+            "pain",
+            "nausea",
+            "fatigue"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 315": {
+        "symptoms": [
+            "swelling",
+            "pain",
+            "confusion",
+            "dizziness",
+            "vomiting"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 316": {
+        "symptoms": [
+            "dizziness",
+            "fatigue",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 317": {
+        "symptoms": [
+            "swelling",
+            "rash",
+            "confusion",
+            "chills",
+            "vomiting",
+            "fever",
+            "nausea"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 318": {
+        "symptoms": [
+            "weakness",
+            "swelling",
+            "rash",
+            "bleeding",
+            "fatigue",
+            "cough",
+            "headache"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 319": {
+        "symptoms": [
+            "shortness of breath",
+            "fatigue",
+            "dizziness",
+            "confusion",
+            "rash",
+            "headache"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 320": {
+        "symptoms": [
+            "chills",
+            "nausea",
+            "bleeding",
+            "shortness of breath"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 321": {
+        "symptoms": [
+            "nausea",
+            "chills",
+            "swelling",
+            "headache",
+            "fever",
+            "shortness of breath"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 322": {
+        "symptoms": [
+            "shortness of breath",
+            "headache",
+            "confusion",
+            "pain",
+            "vomiting",
+            "nausea"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 323": {
+        "symptoms": [
+            "bleeding",
+            "weakness",
+            "cough",
+            "chills",
+            "fatigue",
+            "nausea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 324": {
+        "symptoms": [
+            "nausea",
+            "shortness of breath",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 325": {
+        "symptoms": [
+            "swelling",
+            "confusion",
+            "vomiting",
+            "pain",
+            "dizziness",
+            "fatigue",
+            "fever"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 326": {
+        "symptoms": [
+            "pain",
+            "confusion",
+            "cough",
+            "swelling",
+            "rash"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 327": {
+        "symptoms": [
+            "swelling",
+            "headache",
+            "pain",
+            "chills"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 328": {
+        "symptoms": [
+            "cough",
+            "rash",
+            "dizziness",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 329": {
+        "symptoms": [
+            "vomiting",
+            "pain",
+            "cough",
+            "bleeding",
+            "nausea",
+            "swelling"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 330": {
+        "symptoms": [
+            "swelling",
+            "headache",
+            "dizziness",
+            "confusion",
+            "weakness",
+            "shortness of breath",
+            "chills"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 331": {
+        "symptoms": [
+            "bleeding",
+            "swelling",
+            "chills",
+            "fever",
+            "fatigue",
+            "shortness of breath",
+            "pain"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 332": {
+        "symptoms": [
+            "shortness of breath",
+            "nausea",
+            "chills",
+            "cough",
+            "fever",
+            "pain",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 333": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "weakness",
+            "swelling",
+            "fatigue",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 334": {
+        "symptoms": [
+            "bleeding",
+            "cough",
+            "vomiting",
+            "fever",
+            "headache",
+            "pain",
+            "weakness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 335": {
+        "symptoms": [
+            "swelling",
+            "nausea",
+            "bleeding",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 336": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "swelling",
+            "shortness of breath",
+            "cough",
+            "vomiting",
+            "chills"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 337": {
+        "symptoms": [
+            "weakness",
+            "cough",
+            "fever",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 338": {
+        "symptoms": [
+            "confusion",
+            "rash",
+            "fever",
+            "swelling"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 339": {
+        "symptoms": [
+            "weakness",
+            "bleeding",
+            "fatigue",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 340": {
+        "symptoms": [
+            "cough",
+            "headache",
+            "weakness",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 341": {
+        "symptoms": [
+            "vomiting",
+            "fever",
+            "chills",
+            "fatigue",
+            "pain",
+            "shortness of breath",
+            "cough"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 342": {
+        "symptoms": [
+            "fever",
+            "bleeding",
+            "dizziness",
+            "swelling",
+            "headache",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 343": {
+        "symptoms": [
+            "confusion",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 344": {
+        "symptoms": [
+            "dizziness",
+            "weakness",
+            "pain",
+            "vomiting"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 345": {
+        "symptoms": [
+            "rash",
+            "fatigue",
+            "nausea",
+            "pain",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 346": {
+        "symptoms": [
+            "nausea",
+            "bleeding",
+            "vomiting"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 347": {
+        "symptoms": [
+            "rash",
+            "nausea",
+            "dizziness",
+            "weakness",
+            "cough",
+            "swelling",
+            "fever"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 348": {
+        "symptoms": [
+            "weakness",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 349": {
+        "symptoms": [
+            "cough",
+            "rash",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 350": {
+        "symptoms": [
+            "cough",
+            "bleeding",
+            "confusion"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 351": {
+        "symptoms": [
+            "fever",
+            "cough",
+            "bleeding",
+            "confusion",
+            "swelling",
+            "weakness",
+            "rash"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 352": {
+        "symptoms": [
+            "weakness",
+            "dizziness",
+            "rash",
+            "fever",
+            "nausea",
+            "chills",
+            "pain"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 353": {
+        "symptoms": [
+            "swelling",
+            "dizziness",
+            "headache",
+            "chills",
+            "fatigue"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 354": {
+        "symptoms": [
+            "vomiting",
+            "pain",
+            "cough",
+            "chills",
+            "dizziness",
+            "fatigue",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 355": {
+        "symptoms": [
+            "cough",
+            "pain",
+            "fever",
+            "vomiting",
+            "weakness",
+            "chills",
+            "bleeding"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 356": {
+        "symptoms": [
+            "fever",
+            "confusion",
+            "bleeding"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 357": {
+        "symptoms": [
+            "nausea",
+            "fever",
+            "dizziness",
+            "headache",
+            "vomiting"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 358": {
+        "symptoms": [
+            "vomiting",
+            "shortness of breath",
+            "headache",
+            "chills"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 359": {
+        "symptoms": [
+            "pain",
+            "nausea",
+            "headache",
+            "rash",
+            "fever",
+            "bleeding",
+            "swelling"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 360": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 361": {
+        "symptoms": [
+            "fever",
+            "pain",
+            "nausea",
+            "cough",
+            "vomiting",
+            "fatigue"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 362": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "chills",
+            "pain",
+            "headache",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 363": {
+        "symptoms": [
+            "headache",
+            "fatigue",
+            "weakness",
+            "dizziness",
+            "vomiting",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 364": {
+        "symptoms": [
+            "fever",
+            "vomiting",
+            "cough",
+            "swelling",
+            "dizziness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 365": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "fatigue"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 366": {
+        "symptoms": [
+            "rash",
+            "dizziness",
+            "weakness",
+            "chills",
+            "fever",
+            "pain"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 367": {
+        "symptoms": [
+            "vomiting",
+            "bleeding",
+            "nausea",
+            "fatigue",
+            "cough"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 368": {
+        "symptoms": [
+            "shortness of breath",
+            "confusion",
+            "fever",
+            "headache",
+            "swelling",
+            "chills"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 369": {
+        "symptoms": [
+            "cough",
+            "pain",
+            "fever",
+            "rash"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 370": {
+        "symptoms": [
+            "nausea",
+            "chills",
+            "swelling",
+            "cough"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 371": {
+        "symptoms": [
+            "bleeding",
+            "fever",
+            "rash",
+            "swelling"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 372": {
+        "symptoms": [
+            "pain",
+            "headache",
+            "rash",
+            "dizziness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 373": {
+        "symptoms": [
+            "fever",
+            "fatigue",
+            "swelling",
+            "weakness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 374": {
+        "symptoms": [
+            "shortness of breath",
+            "confusion",
+            "vomiting"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 375": {
+        "symptoms": [
+            "headache",
+            "bleeding",
+            "fever",
+            "vomiting",
+            "fatigue"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 376": {
+        "symptoms": [
+            "bleeding",
+            "weakness",
+            "headache",
+            "swelling",
+            "fever",
+            "fatigue",
+            "rash"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 377": {
+        "symptoms": [
+            "fatigue",
+            "confusion",
+            "chills"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 378": {
+        "symptoms": [
+            "fatigue",
+            "confusion",
+            "headache",
+            "rash"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 379": {
+        "symptoms": [
+            "headache",
+            "confusion",
+            "weakness",
+            "swelling",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 380": {
+        "symptoms": [
+            "swelling",
+            "fever",
+            "shortness of breath",
+            "cough",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 381": {
+        "symptoms": [
+            "dizziness",
+            "confusion",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 382": {
+        "symptoms": [
+            "fever",
+            "nausea",
+            "shortness of breath",
+            "dizziness",
+            "confusion",
+            "cough",
+            "chills"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 383": {
+        "symptoms": [
+            "rash",
+            "headache",
+            "nausea",
+            "cough",
+            "weakness",
+            "vomiting"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 384": {
+        "symptoms": [
+            "shortness of breath",
+            "swelling",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 385": {
+        "symptoms": [
+            "rash",
+            "shortness of breath",
+            "nausea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 386": {
+        "symptoms": [
+            "headache",
+            "nausea",
+            "rash",
+            "chills",
+            "confusion",
+            "fatigue"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 387": {
+        "symptoms": [
+            "swelling",
+            "chills",
+            "fever",
+            "rash",
+            "headache",
+            "bleeding",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 388": {
+        "symptoms": [
+            "swelling",
+            "headache",
+            "weakness",
+            "nausea"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 389": {
+        "symptoms": [
+            "dizziness",
+            "shortness of breath",
+            "fatigue",
+            "weakness",
+            "fever"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 390": {
+        "symptoms": [
+            "weakness",
+            "confusion",
+            "headache",
+            "pain"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 391": {
+        "symptoms": [
+            "confusion",
+            "fatigue",
+            "pain",
+            "vomiting"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 392": {
+        "symptoms": [
+            "vomiting",
+            "confusion",
+            "shortness of breath",
+            "cough"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 393": {
+        "symptoms": [
+            "confusion",
+            "nausea",
+            "bleeding",
+            "fatigue"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 394": {
+        "symptoms": [
+            "headache",
+            "shortness of breath",
+            "pain",
+            "chills",
+            "swelling",
+            "weakness",
+            "dizziness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 395": {
+        "symptoms": [
+            "nausea",
+            "weakness",
+            "dizziness",
+            "chills",
+            "fever"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 396": {
+        "symptoms": [
+            "cough",
+            "fatigue",
+            "headache",
+            "weakness",
+            "bleeding",
+            "pain"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 397": {
+        "symptoms": [
+            "shortness of breath",
+            "weakness",
+            "swelling",
+            "fatigue",
+            "cough",
+            "dizziness",
+            "nausea"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 398": {
+        "symptoms": [
+            "shortness of breath",
+            "fatigue",
+            "swelling",
+            "cough",
+            "vomiting",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 399": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "weakness",
+            "confusion",
+            "bleeding",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 400": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "rash",
+            "cough",
+            "headache",
+            "swelling",
+            "bleeding"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 401": {
+        "symptoms": [
+            "swelling",
+            "fever",
+            "fatigue",
+            "headache",
+            "rash"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 402": {
+        "symptoms": [
+            "shortness of breath",
+            "fever",
+            "bleeding",
+            "cough",
+            "rash",
+            "confusion",
+            "headache"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 403": {
+        "symptoms": [
+            "bleeding",
+            "chills",
+            "dizziness",
+            "shortness of breath",
+            "fatigue",
+            "headache"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 404": {
+        "symptoms": [
+            "cough",
+            "pain",
+            "nausea"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 405": {
+        "symptoms": [
+            "shortness of breath",
+            "bleeding",
+            "chills",
+            "fatigue"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 406": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 407": {
+        "symptoms": [
+            "chills",
+            "weakness",
+            "fatigue",
+            "vomiting"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 408": {
+        "symptoms": [
+            "confusion",
+            "fever",
+            "fatigue",
+            "dizziness",
+            "weakness",
+            "pain",
+            "swelling"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 409": {
+        "symptoms": [
+            "nausea",
+            "dizziness",
+            "headache",
+            "chills",
+            "pain"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 410": {
+        "symptoms": [
+            "fever",
+            "swelling",
+            "vomiting"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 411": {
+        "symptoms": [
+            "nausea",
+            "shortness of breath",
+            "weakness",
+            "confusion"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 412": {
+        "symptoms": [
+            "bleeding",
+            "headache",
+            "rash",
+            "chills"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 413": {
+        "symptoms": [
+            "weakness",
+            "rash",
+            "confusion",
+            "shortness of breath"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 414": {
+        "symptoms": [
+            "vomiting",
+            "fatigue",
+            "dizziness",
+            "confusion",
+            "bleeding",
+            "pain",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 415": {
+        "symptoms": [
+            "vomiting",
+            "weakness",
+            "nausea",
+            "confusion",
+            "rash",
+            "headache",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 416": {
+        "symptoms": [
+            "headache",
+            "weakness",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 417": {
+        "symptoms": [
+            "bleeding",
+            "pain",
+            "fatigue",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 418": {
+        "symptoms": [
+            "confusion",
+            "vomiting",
+            "headache",
+            "bleeding",
+            "pain",
+            "rash"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 419": {
+        "symptoms": [
+            "dizziness",
+            "swelling",
+            "bleeding",
+            "cough",
+            "fatigue",
+            "weakness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 420": {
+        "symptoms": [
+            "headache",
+            "fatigue",
+            "nausea",
+            "fever",
+            "dizziness"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 421": {
+        "symptoms": [
+            "swelling",
+            "fever",
+            "shortness of breath"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 422": {
+        "symptoms": [
+            "cough",
+            "confusion",
+            "bleeding",
+            "rash",
+            "dizziness",
+            "fatigue",
+            "weakness"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 423": {
+        "symptoms": [
+            "weakness",
+            "shortness of breath",
+            "pain",
+            "confusion"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 424": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "swelling",
+            "fever",
+            "shortness of breath",
+            "confusion",
+            "bleeding"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 425": {
+        "symptoms": [
+            "vomiting",
+            "pain",
+            "cough"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 426": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "pain",
+            "chills",
+            "fever"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 427": {
+        "symptoms": [
+            "vomiting",
+            "pain",
+            "headache",
+            "cough",
+            "chills",
+            "confusion",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 428": {
+        "symptoms": [
+            "pain",
+            "shortness of breath",
+            "fatigue",
+            "dizziness",
+            "bleeding",
+            "fever"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 429": {
+        "symptoms": [
+            "fever",
+            "cough",
+            "confusion",
+            "swelling",
+            "shortness of breath",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 430": {
+        "symptoms": [
+            "confusion",
+            "pain",
+            "fever"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 431": {
+        "symptoms": [
+            "pain",
+            "chills",
+            "nausea",
+            "fever",
+            "cough",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 432": {
+        "symptoms": [
+            "fatigue",
+            "dizziness",
+            "nausea",
+            "swelling"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 433": {
+        "symptoms": [
+            "rash",
+            "fatigue",
+            "pain",
+            "headache",
+            "shortness of breath"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 434": {
+        "symptoms": [
+            "fatigue",
+            "cough",
+            "rash",
+            "confusion",
+            "weakness",
+            "swelling"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 435": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "swelling",
+            "pain",
+            "chills",
+            "fever",
+            "rash"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 436": {
+        "symptoms": [
+            "fever",
+            "pain",
+            "nausea",
+            "chills",
+            "rash",
+            "confusion",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 437": {
+        "symptoms": [
+            "pain",
+            "swelling",
+            "cough",
+            "fatigue",
+            "nausea",
+            "confusion",
+            "dizziness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 438": {
+        "symptoms": [
+            "fatigue",
+            "bleeding",
+            "confusion",
+            "headache",
+            "shortness of breath",
+            "fever",
+            "rash"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 439": {
+        "symptoms": [
+            "chills",
+            "bleeding",
+            "rash",
+            "pain",
+            "dizziness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 440": {
+        "symptoms": [
+            "pain",
+            "swelling",
+            "vomiting",
+            "rash",
+            "shortness of breath",
+            "confusion",
+            "weakness"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 441": {
+        "symptoms": [
+            "dizziness",
+            "cough",
+            "confusion"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 442": {
+        "symptoms": [
+            "vomiting",
+            "fever",
+            "rash",
+            "headache",
+            "nausea",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 443": {
+        "symptoms": [
+            "swelling",
+            "vomiting",
+            "fever",
+            "nausea",
+            "rash",
+            "fatigue",
+            "shortness of breath"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 444": {
+        "symptoms": [
+            "pain",
+            "confusion",
+            "chills",
+            "fever",
+            "shortness of breath"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 445": {
+        "symptoms": [
+            "nausea",
+            "pain",
+            "dizziness",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 446": {
+        "symptoms": [
+            "confusion",
+            "chills",
+            "weakness",
+            "cough",
+            "rash",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 447": {
+        "symptoms": [
+            "fatigue",
+            "bleeding",
+            "pain",
+            "swelling"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 448": {
+        "symptoms": [
+            "cough",
+            "headache",
+            "fever",
+            "chills",
+            "fatigue",
+            "nausea"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 449": {
+        "symptoms": [
+            "swelling",
+            "cough",
+            "dizziness",
+            "rash",
+            "chills",
+            "weakness",
+            "fever"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 450": {
+        "symptoms": [
+            "fatigue",
+            "swelling",
+            "pain"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 451": {
+        "symptoms": [
+            "fever",
+            "dizziness",
+            "fatigue"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 452": {
+        "symptoms": [
+            "vomiting",
+            "headache",
+            "dizziness",
+            "nausea",
+            "rash",
+            "bleeding",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 453": {
+        "symptoms": [
+            "confusion",
+            "pain",
+            "dizziness",
+            "swelling",
+            "rash",
+            "headache",
+            "shortness of breath"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 454": {
+        "symptoms": [
+            "vomiting",
+            "fever",
+            "nausea",
+            "dizziness",
+            "weakness"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 455": {
+        "symptoms": [
+            "shortness of breath",
+            "vomiting",
+            "confusion",
+            "weakness"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 456": {
+        "symptoms": [
+            "vomiting",
+            "nausea",
+            "swelling",
+            "confusion",
+            "cough",
+            "bleeding",
+            "pain"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 457": {
+        "symptoms": [
+            "vomiting",
+            "swelling",
+            "rash",
+            "weakness",
+            "nausea"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 458": {
+        "symptoms": [
+            "fatigue",
+            "chills",
+            "pain",
+            "fever",
+            "cough",
+            "vomiting"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 459": {
+        "symptoms": [
+            "fever",
+            "chills",
+            "swelling",
+            "confusion"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 460": {
+        "symptoms": [
+            "cough",
+            "fatigue",
+            "vomiting",
+            "nausea",
+            "fever",
+            "dizziness",
+            "confusion"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 461": {
+        "symptoms": [
+            "shortness of breath",
+            "nausea",
+            "rash",
+            "fever",
+            "swelling"
+        ],
+        "specialty": "General Practice",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 462": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "fatigue",
+            "swelling",
+            "chills",
+            "fever",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 463": {
+        "symptoms": [
+            "pain",
+            "bleeding",
+            "shortness of breath",
+            "fever",
+            "fatigue",
+            "dizziness",
+            "weakness"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 464": {
+        "symptoms": [
+            "chills",
+            "pain",
+            "vomiting",
+            "cough"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 465": {
+        "symptoms": [
+            "cough",
+            "bleeding",
+            "fever",
+            "weakness",
+            "rash",
+            "headache"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 466": {
+        "symptoms": [
+            "fever",
+            "cough",
+            "pain",
+            "bleeding",
+            "shortness of breath",
+            "vomiting"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 467": {
+        "symptoms": [
+            "pain",
+            "vomiting",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 468": {
+        "symptoms": [
+            "headache",
+            "confusion",
+            "nausea",
+            "dizziness",
+            "fever"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 469": {
+        "symptoms": [
+            "confusion",
+            "cough",
+            "chills",
+            "fever"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 470": {
+        "symptoms": [
+            "weakness",
+            "dizziness",
+            "rash",
+            "headache",
+            "fatigue",
+            "bleeding"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 471": {
+        "symptoms": [
+            "fever",
+            "nausea",
+            "weakness",
+            "cough",
+            "dizziness",
+            "chills"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 472": {
+        "symptoms": [
+            "weakness",
+            "shortness of breath",
+            "confusion",
+            "fever",
+            "cough",
+            "dizziness",
+            "bleeding"
+        ],
+        "specialty": "General Practice",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 473": {
+        "symptoms": [
+            "bleeding",
+            "weakness",
+            "cough",
+            "chills",
+            "shortness of breath",
+            "fever",
+            "confusion"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 474": {
+        "symptoms": [
+            "cough",
+            "vomiting",
+            "nausea",
+            "shortness of breath"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 475": {
+        "symptoms": [
+            "headache",
+            "fatigue",
+            "dizziness",
+            "pain",
+            "rash"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 476": {
+        "symptoms": [
+            "fatigue",
+            "rash",
+            "vomiting",
+            "pain",
+            "fever"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 477": {
+        "symptoms": [
+            "headache",
+            "rash",
+            "confusion",
+            "fatigue",
+            "weakness",
+            "vomiting",
+            "pain"
+        ],
+        "specialty": "Orthopedist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 478": {
+        "symptoms": [
+            "chills",
+            "pain",
+            "dizziness",
+            "headache",
+            "rash",
+            "bleeding",
+            "confusion"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 479": {
+        "symptoms": [
+            "confusion",
+            "vomiting",
+            "shortness of breath",
+            "cough",
+            "rash",
+            "chills"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 480": {
+        "symptoms": [
+            "swelling",
+            "weakness",
+            "rash",
+            "chills",
+            "vomiting",
+            "shortness of breath",
+            "cough"
+        ],
+        "specialty": "Pediatrician",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 481": {
+        "symptoms": [
+            "chills",
+            "swelling",
+            "rash",
+            "cough",
+            "shortness of breath",
+            "headache",
+            "fever"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "low"
+    },
+    "Clinical Condition Variant 482": {
+        "symptoms": [
+            "pain",
+            "fever",
+            "bleeding"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 483": {
+        "symptoms": [
+            "headache",
+            "weakness",
+            "dizziness",
+            "fever",
+            "fatigue",
+            "nausea",
+            "confusion"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    },
+    "Clinical Condition Variant 484": {
+        "symptoms": [
+            "nausea",
+            "cough",
+            "shortness of breath",
+            "weakness",
+            "pain",
+            "fatigue",
+            "bleeding"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "high"
+    }
+}

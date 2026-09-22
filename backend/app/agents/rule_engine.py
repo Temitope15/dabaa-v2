@@ -1,52 +1,13 @@
 import json
+import os
 
-DISEASES = {
-    "Malaria": {
-        "symptoms": ["fever", "headache", "chills", "nausea", "vomiting", "muscle pain", "weakness", "fatigue"],
-        "specialty": "General Practitioner",
-        "urgency": "medium"
-    },
-    "Typhoid": {
-        "symptoms": ["fever", "headache", "stomach pain", "abdominal pain", "weakness", "diarrhea", "constipation"],
-        "specialty": "General Practitioner",
-        "urgency": "medium"
-    },
-    "Cholera": {
-        "symptoms": ["diarrhea", "vomiting", "leg cramps", "dehydration"],
-        "specialty": "Emergency Medicine",
-        "urgency": "high"
-    },
-    "Hypertension": {
-        "symptoms": ["headache", "shortness of breath", "nosebleeds", "dizziness", "chest pain", "blurry vision"],
-        "specialty": "Cardiologist",
-        "urgency": "high"
-    },
-    "Peptic Ulcer": {
-        "symptoms": ["stomach pain", "abdominal pain", "bloating", "heartburn", "nausea", "chest pain"],
-        "specialty": "Gastroenterologist",
-        "urgency": "medium"
-    },
-    "Asthma": {
-        "symptoms": ["shortness of breath", "chest tightness", "wheezing", "coughing"],
-        "specialty": "Pulmonologist",
-        "urgency": "high"
-    },
-    "Gastroenteritis": {
-        "symptoms": ["diarrhea", "vomiting", "stomach pain", "fever", "nausea"],
-        "specialty": "General Practitioner",
-        "urgency": "medium"
-    },
-    "Migraine": {
-        "symptoms": ["headache", "nausea", "sensitivity to light", "dizziness", "throbbing pain"],
-        "specialty": "Neurologist",
-        "urgency": "low"
-    },
-    "COVID-19": {
-        "symptoms": ["fever", "coughing", "loss of taste", "loss of smell", "shortness of breath", "fatigue"],
-        "specialty": "General Practitioner",
-        "urgency": "high"
-    }
-}
+db_path = os.path.join(os.path.dirname(__file__), "..", "data", "disease_db.json")
+try:
+    with open(db_path, "r", encoding="utf-8") as f:
+        DISEASES = json.load(f)
+except Exception as e:
+    print(f"Failed to load disease_db: {e}")
+    DISEASES = {}
 
 ALL_SYMPTOMS = set()
 for d in DISEASES.values():
