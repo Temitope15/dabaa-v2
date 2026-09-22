@@ -5,6 +5,7 @@ import { sendMessageToDaaba, Doctor } from '@/lib/api';
 import { DoctorCard } from '@/components/DoctorCard';
 import RideMap from '@/components/RideMap';
 import ReactMarkdown from 'react-markdown';
+import { api } from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Activity } from 'lucide-react';
 
@@ -96,11 +97,16 @@ export default function ChatPage() {
     }
   };
 
-  const handleBooking = (doctorId: string | number) => {
+  const handleBooking = async (doctorId: string | number) => {
     setBookingState(prev => ({ ...prev, [doctorId]: 'loading' as const }));
-    setTimeout(() => {
+    try {
+      await api.post('/book', { doctor_id: doctorId });
       setBookingState(prev => ({ ...prev, [doctorId]: 'success' as const }));
-    }, 1500);
+    } catch (err) {
+      console.error(err);
+      setBookingState(prev => ({ ...prev, [doctorId]: 'idle' as const }));
+      setErrorToast("Failed to book appointment. Please try again.");
+    }
   };
 
   const currentSlide = slides[currentSlideIndex];

@@ -18,8 +18,12 @@ export default function LoginPage() {
     setError('');
 
     try {
-      await login(email, password);
-      router.push('/chat');
+      const res = await login(email, password);
+      if (res.role === 'doctor') {
+        router.push('/doctor');
+      } else {
+        router.push('/chat');
+      }
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Invalid email or password');
     } finally {
