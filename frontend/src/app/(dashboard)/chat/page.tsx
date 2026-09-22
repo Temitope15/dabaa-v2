@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { sendMessageToDaaba, Doctor } from '@/lib/api';
 import { DoctorCard } from '@/components/DoctorCard';
 import RideMap from '@/components/RideMap';
@@ -18,6 +19,7 @@ interface SlideData {
 }
 
 export default function ChatPage() {
+  const router = useRouter();
   const [userName, setUserName] = useState('');
   const [slides, setSlides] = useState<SlideData[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -102,6 +104,11 @@ export default function ChatPage() {
     try {
       await api.post('/book', { doctor_id: doctorId });
       setBookingState(prev => ({ ...prev, [doctorId]: 'success' as const }));
+      
+      // Seamless flow: redirect to appointments page after a short success message
+      setTimeout(() => {
+        router.push('/appointments');
+      }, 1000);
     } catch (err) {
       console.error(err);
       setBookingState(prev => ({ ...prev, [doctorId]: 'idle' as const }));
@@ -246,9 +253,9 @@ export default function ChatPage() {
                         {bookingState[doc.id] === 'loading' ? (
                           <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin mx-auto"></div>
                         ) : bookingState[doc.id] === 'success' ? (
-                          doc.is_hospital ? 'Directions Sent!' : 'Request Sent!'
+                          'Booking Confirmed!'
                         ) : (
-                          doc.is_hospital ? 'Get Directions' : 'Book Appointment'
+                          'Book Appointment'
                         )}
                       </button>
                     </div>

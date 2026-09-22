@@ -15,13 +15,14 @@ class BookingRequest(BaseModel):
 async def book_appointment(request: BookingRequest, current_user: User = Depends(get_current_user)):
     db = SessionLocal()
     try:
-        # Check if it's a fallback OSM hospital
-        if isinstance(request.doctor_id, str) and request.doctor_id.startswith("osm-"):
+        # Check if it's a fallback OSM or mock hospital
+        # Any doctor_id that isn't purely numeric should be treated as a hospital/external routing
+        if isinstance(request.doctor_id, str) and not request.doctor_id.isdigit():
             print("\n" + "="*50)
-            print(f"🗺️ EXTERNAL ROUTING: Directions requested for hospital {request.doctor_id}!")
+            print(f"🗺️ EXTERNAL ROUTING: Directions/Booking requested for hospital {request.doctor_id}!")
             print(f"📩 NOTIFICATION AGENT: Sent SMS to Patient {current_user.id} with hospital location details.")
             print("="*50 + "\n")
-            return {"message": "Directions sent! Please proceed to the hospital as a walk-in patient."}
+            return {"message": "Booking request sent! Please proceed to the hospital."}
 
         # In a real app, we'd assign a proper slot. We'll mock a generic confirmed appointment.
         appointment = Appointment(
@@ -43,6 +44,8 @@ async def book_appointment(request: BookingRequest, current_user: User = Depends
         
         return {"message": "Appointment successfully booked and calendar updated."}
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
     finally:
