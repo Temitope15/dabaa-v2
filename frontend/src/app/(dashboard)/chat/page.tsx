@@ -141,8 +141,8 @@ export default function ChatPage() {
               className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden"
             >
               <div className="p-6 border-b border-slate-100">
-                <h2 className="text-xl font-bold text-slate-900">Add Gemini API Key</h2>
-                <p className="text-sm text-slate-500 mt-1">To ensure uninterrupted service and bypass global rate limits, please provide your own free Gemini API key.</p>
+                <h2 className="text-xl font-bold text-slate-900">Add API Key</h2>
+                <p className="text-sm text-slate-500 mt-1">To ensure uninterrupted service, please provide your own free Gemini or OpenRouter (Claude) API key.</p>
               </div>
               
               <div className="p-6 space-y-4 bg-slate-50/50">
@@ -152,14 +152,17 @@ export default function ChatPage() {
                     type="password"
                     value={tempApiKey}
                     onChange={(e) => setTempApiKey(e.target.value)}
-                    placeholder="AIzaSy..."
+                    placeholder="AIzaSy... or sk-or-..."
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all font-mono text-sm"
                   />
                 </div>
                 
                 <div className="bg-blue-50 text-blue-800 text-xs p-3 rounded-xl border border-blue-100">
-                  <p className="font-semibold mb-1">Don't have a key?</p>
-                  <p>Get one for free from Google AI Studio: <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-blue-900">aistudio.google.com</a></p>
+                  <p className="font-semibold mb-1">Supported Providers:</p>
+                  <ul className="list-disc pl-4 space-y-1">
+                    <li><a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-blue-900">Google Gemini (AI Studio)</a></li>
+                    <li><a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-blue-900">OpenRouter (Claude 3.5 Sonnet)</a></li>
+                  </ul>
                 </div>
               </div>
               

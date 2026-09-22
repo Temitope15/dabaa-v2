@@ -86,7 +86,7 @@ class Orchestrator:
                     }
                 else:
                     return {
-                        "text": "It looks like the system is currently overloaded or we've hit our global Gemini API quota limit. Please go to your **Profile** to enter your own Gemini API key to continue chatting without interruptions.",
+                        "text": "It looks like the system is currently overloaded or we've hit our global API quota limit. Please go to your **Profile** to enter your own Gemini or OpenRouter API key to continue chatting without interruptions.",
                         "doctors": [],
                         "events": ["Error: Global API Quota Exceeded"]
                     }
@@ -157,7 +157,7 @@ class Orchestrator:
                     }
                 else:
                     return {
-                        "text": "It looks like the system is currently overloaded or we've hit our global Gemini API quota limit. Please go to your **Profile** to enter your own Gemini API key to continue chatting without interruptions.",
+                        "text": "It looks like the system is currently overloaded or we've hit our global API quota limit. Please go to your **Profile** to enter your own Gemini or OpenRouter API key to continue chatting without interruptions.",
                         "doctors": [],
                         "events": ["Error: Global API Quota Exceeded"]
                     }

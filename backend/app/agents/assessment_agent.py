@@ -1,5 +1,6 @@
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from app.agents.knowledge_agent import knowledge_agent
 from dotenv import load_dotenv
@@ -8,11 +9,9 @@ load_dotenv()
 
 class AssessmentAgent:
     def __init__(self):
-        api_key = os.getenv("GOOGLE_API_KEY")
-        if not api_key:
-            print("WARNING: GOOGLE_API_KEY is not set in .env")
-        
-        self.llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", temperature=0, google_api_key=api_key)
+        # Default to Gemini for the environment variable if present
+        api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("OPENROUTER_API_KEY") or "dummy_key"
+        self.llm = self._build_llm(api_key)
         self.retriever_tool = knowledge_agent.get_retriever_tool()
         self.tools = [self.retriever_tool]
         
@@ -38,10 +37,21 @@ JSON FORMAT:
 """
         self.agent = create_react_agent(self.llm, tools=self.tools, prompt=self.system_prompt)
 
-    def _build_llm(self, custom_api_key: str = None):
+    def _build_llm(self, custom_api_key: str):
         if not custom_api_key:
             return self.llm
-        return ChatGoogleGenerativeAI(model="gemini-3.5-flash", temperature=0, google_api_key=custom_api_key)
+            
+        # Auto-detect key type
+        if custom_api_key.startswith("AIza"):
+            return ChatGoogleGenerativeAI(model="gemini-3.5-flash", temperature=0, google_api_key=custom_api_key)
+        else:
+            # Assume OpenRouter (sk-or-...) or direct Anthropic if they proxy it
+            return ChatOpenAI(
+                model="anthropic/claude-3.5-sonnet", 
+                temperature=0, 
+                api_key=custom_api_key,
+                base_url="https://openrouter.ai/api/v1"
+            )
 
     def get_agent(self, custom_api_key: str = None):
         if not custom_api_key:
