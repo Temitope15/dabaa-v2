@@ -71,27 +71,16 @@ class Orchestrator:
                 "events": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]
             }
             
-        # 1. Run Assessment Agent
-        try:
-            response_text = assessment_agent.run(message, chat_history, api_key=api_key)
-            events.append("Triage Complete.")
-        except Exception as e:
-            error_msg = str(e)
-            if "RESOURCE_EXHAUSTED" in error_msg or "429" in error_msg:
-                if api_key:
-                    return {
-                        "text": "The custom Gemini API key you provided has exceeded its quota or usage limit. Please check your Google Cloud Console or update the key in your **Profile**.",
-                        "doctors": [],
-                        "events": ["Error: User API Quota Exceeded"]
-                    }
-                else:
-                    return {
-                        "text": "It looks like the system is currently overloaded or we've hit our global API quota limit. Please go to your **Profile** to enter your own Gemini or OpenRouter API key to continue chatting without interruptions.",
-                        "doctors": [],
-                        "events": ["Error: Global API Quota Exceeded"]
-                    }
-            return {"text": f"Error: {e}", "doctors": [], "events": ["Error: Internal Error"]}
-            
+        # 1. Deterministic Hardcoded Chat Flow (NO AI)
+        if len(chat_history) == 0:
+            response_text = "I'm sorry to hear that. How long have you been experiencing these symptoms?"
+        elif len(chat_history) == 2:
+            response_text = "I see. Are you experiencing any other symptoms like fever, nausea, or dizziness?"
+        else:
+            response_text = "Thank you for sharing. Based on your symptoms, I strongly recommend seeing a medical professional for a proper diagnosis.\n\n```json\n{\"symptoms\": [\"reported symptoms\"], \"urgency\": \"medium\", \"specialty\": \"General Practitioner\", \"medical_summary\": \"Patient requires general consultation based on reported symptoms.\"}\n```"
+        
+        events.append("Triage Complete.")
+        
         # Update history
         chat_history.append(("human", message))
         chat_history.append(("ai", response_text))
@@ -131,37 +120,19 @@ class Orchestrator:
             yield {"type": "doctors", "data": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)}
             return
             
-        # 1. Stream from Assessment Agent
-        try:
-            full_text = ""
-            hide_json = False
-            for token in assessment_agent.run_stream(message, chat_history, api_key=api_key):
-                full_text += token
-                if "```json" in full_text and not hide_json:
-                    hide_json = True
-                    # Backtrack to remove the "```json" part that was already sent? Too complex.
-                    # We just stop sending new tokens.
-                if not hide_json:
-                    yield {"type": "token", "data": token}
-            
-            yield {"type": "events", "data": ["Assessment Agent Analyzing Symptoms...", "Triage Complete."]}
-            
-        except Exception as e:
-            error_msg = str(e)
-            if "RESOURCE_EXHAUSTED" in error_msg or "429" in error_msg:
-                if api_key:
-                    return {
-                        "text": "The custom Gemini API key you provided has exceeded its quota or usage limit. Please check your Google Cloud Console or update the key in your **Profile**.",
-                        "doctors": [],
-                        "events": ["Error: User API Quota Exceeded"]
-                    }
-                else:
-                    return {
-                        "text": "It looks like the system is currently overloaded or we've hit our global API quota limit. Please go to your **Profile** to enter your own Gemini or OpenRouter API key to continue chatting without interruptions.",
-                        "doctors": [],
-                        "events": ["Error: Global API Quota Exceeded"]
-                    }
-            return {"text": f"Error: {e}", "doctors": [], "events": ["Error: Internal Error"]}
+        # 1. Deterministic Hardcoded Chat Flow (NO AI)
+        full_text = ""
+        if len(chat_history) == 0:
+            full_text = "I'm sorry to hear that. How long have you been experiencing these symptoms?"
+        elif len(chat_history) == 2:
+            full_text = "I see. Are you experiencing any other symptoms like fever, nausea, or dizziness?"
+        else:
+            full_text = "Thank you for sharing. Based on your symptoms, I strongly recommend seeing a medical professional for a proper diagnosis.\n\n```json\n{\"symptoms\": [\"reported symptoms\"], \"urgency\": \"medium\", \"specialty\": \"General Practitioner\", \"medical_summary\": \"Patient requires general consultation based on reported symptoms.\"}\n```"
+
+        for word in full_text.split():
+            yield {"type": "token", "data": word + " "}
+        
+        yield {"type": "events", "data": ["Rule-based Engine Analyzing...", "Triage Complete."]}
         
         # Update history
         chat_history.append(("human", message))
@@ -174,7 +145,7 @@ class Orchestrator:
             hospital_note = "\n\n*Oops! Sorry, there are no specific doctors around right now, but these are nearby hospitals that you can go to based on your location.*"
             yield {"type": "token", "data": hospital_note}
         
-        all_events = ["Assessment Agent Analyzing Symptoms...", "Triage Complete."] + doc_events
+        all_events = ["Rule-based Engine Analyzing...", "Triage Complete."] + doc_events
         yield {"type": "events", "data": all_events}
         yield {"type": "doctors", "data": doctors}
 
