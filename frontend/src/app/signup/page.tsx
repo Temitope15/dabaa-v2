@@ -38,7 +38,8 @@ export default function SignupPage() {
       });
 
       if (role === 'doctor') {
-        await axios.post('http://127.0.0.1:8000/api/doctor/profile', {
+        const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+        await axios.post(`${BASE_URL}/api/doctor/profile`, {
           specialty: formData.specialty,
           bio: formData.bio,
           mdcn_number: formData.mdcn_number,

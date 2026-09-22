@@ -27,6 +27,10 @@ def register(user_in: UserCreate, db: Session = Depends(get_db)):
     if user:
         raise HTTPException(status_code=400, detail="Email already registered")
         
+    user_by_phone = db.query(User).filter(User.phone_number == user_in.phone_number).first()
+    if user_by_phone:
+        raise HTTPException(status_code=400, detail="Phone number already registered")
+        
     new_user = User(
         full_name=user_in.full_name,
         email=user_in.email,
@@ -34,9 +38,12 @@ def register(user_in: UserCreate, db: Session = Depends(get_db)):
         hashed_password=get_password_hash(user_in.password),
         role=user_in.role
     )
-    if user_in.date_of_birth:
-        new_user.date_of_birth = datetime.date.fromisoformat(user_in.date_of_birth)
-        
+    if user_in.date_of_birth and user_in.date_of_birth.strip():
+        try:
+            new_user.date_of_birth = datetime.date.fromisoformat(user_in.date_of_birth)
+        except ValueError:
+            pass # Ignore invalid dates to prevent 500 crashes
+            
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
