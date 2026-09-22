@@ -9,8 +9,8 @@ load_dotenv()
 
 class AssessmentAgent:
     def __init__(self):
-        # Default to Gemini for the environment variable if present
-        api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("OPENROUTER_API_KEY") or "dummy_key"
+        # Default to global keys if present
+        api_key = os.getenv("AGENTROUTER_API_KEY") or os.getenv("OPENROUTER_API_KEY") or os.getenv("GOOGLE_API_KEY") or "dummy_key"
         self.llm = self._build_llm(api_key)
         self.retriever_tool = knowledge_agent.get_retriever_tool()
         self.tools = [self.retriever_tool]
