@@ -71,13 +71,9 @@ class Orchestrator:
                 "events": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]
             }
             
-        # 1. Deterministic Hardcoded Chat Flow (NO AI)
-        if len(chat_history) == 0:
-            response_text = "I'm sorry to hear that. How long have you been experiencing these symptoms?"
-        elif len(chat_history) == 2:
-            response_text = "I see. Are you experiencing any other symptoms like fever, nausea, or dizziness?"
-        else:
-            response_text = "Thank you for sharing. Based on your symptoms, I strongly recommend seeing a medical professional for a proper diagnosis.\n\n```json\n{\"symptoms\": [\"reported symptoms\"], \"urgency\": \"medium\", \"specialty\": \"General Practitioner\", \"medical_summary\": \"Patient requires general consultation based on reported symptoms.\"}\n```"
+        # 1. Deterministic Rule-Based Chat Flow (NO AI)
+        from app.agents.rule_engine import process_rule_based_chat
+        response_text = process_rule_based_chat(chat_history, message)
         
         events.append("Triage Complete.")
         
@@ -120,14 +116,10 @@ class Orchestrator:
             yield {"type": "doctors", "data": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)}
             return
             
-        # 1. Deterministic Hardcoded Chat Flow (NO AI)
-        full_text = ""
-        if len(chat_history) == 0:
-            full_text = "I'm sorry to hear that. How long have you been experiencing these symptoms?"
-        elif len(chat_history) == 2:
-            full_text = "I see. Are you experiencing any other symptoms like fever, nausea, or dizziness?"
-        else:
-            full_text = "Thank you for sharing. Based on your symptoms, I strongly recommend seeing a medical professional for a proper diagnosis.\n\n```json\n{\"symptoms\": [\"reported symptoms\"], \"urgency\": \"medium\", \"specialty\": \"General Practitioner\", \"medical_summary\": \"Patient requires general consultation based on reported symptoms.\"}\n```"
+        # 1. Deterministic Rule-Based Chat Flow (NO AI)
+        from app.agents.rule_engine import process_rule_based_chat
+        
+        full_text = process_rule_based_chat(chat_history, message)
 
         for word in full_text.split():
             yield {"type": "token", "data": word + " "}
