@@ -1,4 +1,4 @@
-# Medical Guidelines for Common Ailments
+e# Medical Guidelines for Common Ailments
 
 ## Malaria
 **Overview:** A life-threatening disease spread to humans by some types of mosquitoes. Mostly found in tropical countries like Nigeria.

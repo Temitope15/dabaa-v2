@@ -16,7 +16,7 @@ class ChatRequest(BaseModel):
     api_key: Optional[str] = None
 
 @router.post("/chat")
-async def chat_with_daaba(request: ChatRequest, current_user: User = Depends(get_current_user)):
+def chat_with_daaba(request: ChatRequest, current_user: User = Depends(get_current_user)):
     try:
         response = orchestrator.process_message(
             patient_id=current_user.id,
