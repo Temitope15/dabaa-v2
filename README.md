@@ -2,7 +2,7 @@
 
 Dààbà (Yoruba for "Protection/Safety") is a smart, deterministic clinical triage and referral application designed for the Nigerian healthcare context. 
 
-It acts as a digital first-responder, asking patients about their symptoms, analyzing them against a robust rule-based clinical expert system (containing nearly 500 diseases), and referring them to the most appropriate medical specialist or nearby hospital via an interactive map.
+It acts as a digital first-responder, asking patients about their symptoms, analyzing them against a robust rule-based clinical agent (containing nearly 500 diseases), and referring them to the most appropriate medical specialist or nearby hospital via an interactive map.
 
 ---
 
