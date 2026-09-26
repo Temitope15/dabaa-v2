@@ -29,12 +29,11 @@ pip install -r requirements.txt
 ```
 
 **Step 3: Setup Environment Variables**
-Create a `.env` file in the `backend` folder and paste the following secrets exactly as they are (no need to hide them for this review):
+Create a `.env` file in the `backend` folder and paste the following secrets exactly as they are:
 ```env
 DATABASE_URL=postgresql://neondb_owner:npg_YOuWh3vlzoe0@ep-steep-bread-b45vli87-pooler.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
 SECRET_KEY=d1c957b56e1216ef3ef64087edcbac43cbd82791c1d62eeb86de1e395a087c70
 ```
-*(Note: We have disabled the LLM/Generative AI requirement to ensure lightning-fast, zero-cost deterministic testing, so no AI keys are required!)*
 
 **Step 4: Run the server**
 ```bash
@@ -98,8 +97,4 @@ To fully experience the application exactly as intended, please follow this spec
 
 ---
 
-## 🧠 Architecture Notes
-* **Deterministic Expert System:** To guarantee 100% reliability during presentations and eliminate API costs/latency, the clinical reasoning engine is strictly rule-based. It mathematically scores user inputs against a local JSON database of 499 Nigerian ailments.
-* **Geospatial Routing:** The app calculates distance using the Haversine formula and integrates with OpenStreetMap (OSM) public tile servers for water-mark free mapping.
-* **Database:** PostgreSQL hosted on Neon DB, interacting via SQLAlchemy ORM.
 
