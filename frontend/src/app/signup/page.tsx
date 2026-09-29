@@ -54,13 +54,14 @@ export default function SignupPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-slate-900">
-          Create a Daaba account
+          Wait... before you meet Nurse Daaba
         </h2>
-        <p className="mt-2 text-center text-sm text-slate-600">
-          Already have an account?{' '}
-          <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
-            Sign in instead
+        <p className="mt-2 text-center text-lg text-slate-600 font-medium">
+          Oya register! (Or{' '}
+          <Link href="/login" className="font-semibold text-blue-600 hover:text-blue-500">
+            sign in here
           </Link>
+          )
         </p>
       </div>
 
