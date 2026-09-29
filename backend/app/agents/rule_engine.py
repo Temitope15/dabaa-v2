@@ -258,13 +258,14 @@ def build_followup_question(detected: list, scores: dict, top_disease: str, top_
 
     # Pick the most discriminating 5 symptoms
     checklist = unmentioned[:5]
-    prob_pct = int(top_prob * 100)
     symptom_list = ", ".join(detected)
-    checklist_str = "\n".join([f"• {s.title()}" for s in checklist])
+
+    # Use a special format that the frontend can parse into checkboxes
+    checklist_json = json.dumps(checklist)
 
     response = f"I understand you have **{symptom_list}**. "
-    response += f"I'm narrowing it down (confidence: {prob_pct}%). "
-    response += f"Do you also have any of the following?\n\n{checklist_str}"
+    response += f"Do you also have any of the following symptoms?\n\n"
+    response += f"[CHECKLIST]{checklist_json}[/CHECKLIST]"
 
     return response
 

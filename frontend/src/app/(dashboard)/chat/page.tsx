@@ -33,6 +33,12 @@ export default function ChatPage() {
   
   const [errorToast, setErrorToast] = useState<string | null>(null);
 
+  // Checklist state for symptom selection
+  const [checklistOptions, setChecklistOptions] = useState<string[]>([]);
+  const [checkedSymptoms, setCheckedSymptoms] = useState<Set<string>>(new Set());
+  const [otherSymptom, setOtherSymptom] = useState('');
+  const [showChecklist, setShowChecklist] = useState(false);
+
   useEffect(() => {
     const name = localStorage.getItem('user_name');
     if (name) {
@@ -82,6 +88,25 @@ export default function ChatPage() {
         setActiveEvents(response.events);
       }
 
+      // Check if the response contains a checklist for symptom selection
+      const checklistMatch = response.text.match(/\[CHECKLIST\](.*?)\[\/CHECKLIST\]/);
+      if (checklistMatch) {
+        try {
+          const options = JSON.parse(checklistMatch[1]);
+          setChecklistOptions(options);
+          setCheckedSymptoms(new Set());
+          setOtherSymptom('');
+          setShowChecklist(true);
+        } catch (e) {
+          setShowChecklist(false);
+        }
+        // Strip the checklist markers from the display text
+        response.text = response.text.replace(/\[CHECKLIST\].*?\[\/CHECKLIST\]/, '').trim();
+      } else {
+        setShowChecklist(false);
+        setChecklistOptions([]);
+      }
+
       setSlides(prev => [...prev, {
         id: Date.now(),
         question: response.text,
@@ -97,6 +122,82 @@ export default function ChatPage() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleChecklistSubmit = async () => {
+    const selected = Array.from(checkedSymptoms);
+    if (otherSymptom.trim()) {
+      selected.push(otherSymptom.trim());
+    }
+    if (selected.length === 0) return;
+
+    const message = `Yes, I also have ${selected.join(', ')}`;
+    setShowChecklist(false);
+    setChecklistOptions([]);
+    setCheckedSymptoms(new Set());
+    setOtherSymptom('');
+    setInput('');
+    setIsLoading(true);
+    setErrorToast(null);
+
+    try {
+      const response = await sendMessageToDaaba(message);
+
+      if (response.text.startsWith("Error:") || response.text.includes("Quota Exceeded")) {
+        setErrorToast(response.text);
+        setIsLoading(false);
+        return;
+      }
+
+      const isFinal = (response.doctors && response.doctors.length > 0) || response.text.length > 500;
+
+      if (response.events) {
+        setActiveEvents(response.events);
+      }
+
+      // Check for another checklist round
+      const checklistMatch = response.text.match(/\[CHECKLIST\](.*?)\[\/CHECKLIST\]/);
+      if (checklistMatch) {
+        try {
+          const options = JSON.parse(checklistMatch[1]);
+          setChecklistOptions(options);
+          setCheckedSymptoms(new Set());
+          setOtherSymptom('');
+          setShowChecklist(true);
+        } catch (e) {
+          setShowChecklist(false);
+        }
+        response.text = response.text.replace(/\[CHECKLIST\].*?\[\/CHECKLIST\]/, '').trim();
+      } else {
+        setShowChecklist(false);
+        setChecklistOptions([]);
+      }
+
+      setSlides(prev => [...prev, {
+        id: Date.now(),
+        question: response.text,
+        isFinal: isFinal,
+        doctors: response.doctors,
+      }]);
+      setCurrentSlideIndex(prev => prev + 1);
+    } catch (error: any) {
+      const errorMsg = error.response?.data?.detail || error.message || "Network error. Please try again.";
+      setErrorToast(errorMsg);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const toggleSymptom = (symptom: string) => {
+    setCheckedSymptoms(prev => {
+      const next = new Set(prev);
+      if (next.has(symptom)) {
+        next.delete(symptom);
+      } else {
+        next.add(symptom);
+      }
+      return next;
+    });
   };
 
   const handleBooking = async (doctorId: string | number) => {
@@ -282,6 +383,65 @@ export default function ChatPage() {
                   <ReactMarkdown>{currentSlide.question}</ReactMarkdown>
                 </div>
                 
+                {showChecklist ? (
+                  <div className="w-full mt-8">
+                    <div className="space-y-3 mb-4">
+                      {checklistOptions.map((symptom) => (
+                        <label
+                          key={symptom}
+                          className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                            checkedSymptoms.has(symptom)
+                              ? 'border-blue-600 bg-blue-50'
+                              : 'border-slate-200 bg-white hover:border-slate-300'
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={checkedSymptoms.has(symptom)}
+                            onChange={() => toggleSymptom(symptom)}
+                            className="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          />
+                          <span className="text-lg text-slate-800 font-medium capitalize">{symptom}</span>
+                        </label>
+                      ))}
+                      {/* Other option */}
+                      <div className="flex items-center gap-3 p-3 rounded-xl border-2 border-dashed border-slate-200 bg-white">
+                        <span className="text-lg text-slate-500 font-medium shrink-0">Other:</span>
+                        <input
+                          type="text"
+                          value={otherSymptom}
+                          onChange={(e) => setOtherSymptom(e.target.value)}
+                          placeholder="Type another symptom..."
+                          className="flex-1 bg-transparent outline-none text-lg text-slate-800 placeholder:text-slate-300"
+                        />
+                      </div>
+                    </div>
+                    <button
+                      onClick={handleChecklistSubmit}
+                      disabled={checkedSymptoms.size === 0 && !otherSymptom.trim() || isLoading}
+                      className="w-full py-3 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 disabled:opacity-30 transition-all flex items-center justify-center gap-2"
+                    >
+                      {isLoading ? (
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      ) : (
+                        <>
+                          Submit Symptoms
+                          <ArrowRight className="w-5 h-5" />
+                        </>
+                      )}
+                    </button>
+                    {/* None of the above option */}
+                    <button
+                      onClick={() => {
+                        setInput("I don't have any of those symptoms");
+                        setShowChecklist(false);
+                      }}
+                      className="w-full mt-2 py-2 text-slate-500 text-sm font-medium hover:text-slate-700 transition-colors"
+                    >
+                      None of the above
+                    </button>
+                  </div>
+                ) : (
                 <form onSubmit={handleSubmit} className="w-full relative mt-8">
                   <input
                     type="text"
@@ -304,6 +464,7 @@ export default function ChatPage() {
                     )}
                   </button>
                 </form>
+                )}
                 {isLoading && (
                   <p className="text-sm text-slate-500 animate-pulse mt-2 flex items-center gap-2">
                     <Activity className="w-4 h-4" /> Nurse Daaba is typing...
