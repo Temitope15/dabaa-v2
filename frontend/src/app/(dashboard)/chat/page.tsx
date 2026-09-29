@@ -214,8 +214,22 @@ export default function ChatPage() {
       setBookingState(prev => ({ ...prev, [doctorId]: 'success' as const }));
       
       if (isExternal) {
-        // Open Google Maps directions in a new tab
-        window.open(`https://www.google.com/maps/dir/?api=1&destination=${doc.lat},${doc.lng}`, '_blank');
+        // Open Google Maps directions in a new tab using live geolocation
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const userLat = position.coords.latitude;
+              const userLng = position.coords.longitude;
+              window.open(`https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${doc.lat},${doc.lng}`, '_blank');
+            },
+            () => {
+              // Fallback if geolocation fails
+              window.open(`https://www.google.com/maps/dir/?api=1&destination=${doc.lat},${doc.lng}`, '_blank');
+            }
+          );
+        } else {
+          window.open(`https://www.google.com/maps/dir/?api=1&destination=${doc.lat},${doc.lng}`, '_blank');
+        }
       }
       
       // Seamless flow: redirect to appointments page after a short success message

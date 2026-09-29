@@ -122,6 +122,23 @@ def extract_symptoms_fuzzy(text: str) -> list:
     """
     found = set()
     text_lower = text.lower()
+    
+    # Pre-pass: Map common colloquial terms to official known symptoms
+    SYNONYMS = {
+        "cold": "chills runny nose",
+        "tummy ache": "stomach pain",
+        "belly ache": "stomach pain",
+        "puking": "vomiting",
+        "throw up": "vomiting",
+        "throwing up": "vomiting",
+        "hot": "fever",
+        "temperature": "fever",
+        "pooping": "diarrhea",
+        "runny poo": "diarrhea"
+    }
+    for slang, official in SYNONYMS.items():
+        if slang in text_lower:
+            text_lower = text_lower.replace(slang, official)
 
     # Pass 1: Exact multi-word phrase matching
     for sym in MULTI_WORD_SYMPTOMS:
