@@ -37,21 +37,8 @@ export default function SignupPage() {
         role: role
       });
 
-      if (role === 'doctor') {
-        const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
-        await axios.post(`${BASE_URL}/api/doctor/profile`, {
-          specialty: formData.specialty,
-          bio: formData.bio,
-          mdcn_number: formData.mdcn_number,
-          lat: 6.5244,
-          lng: 3.3792
-        }, {
-          headers: { Authorization: `Bearer ${res.access_token}` }
-        });
-        router.push('/doctor');
-      } else {
-        router.push('/chat');
-      }
+      // Since we only allow patients now
+      router.push('/chat');
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Registration failed');
     } finally {
@@ -79,21 +66,6 @@ export default function SignupPage() {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 border border-slate-200">
-          <div className="flex mb-6 bg-slate-100 p-1 rounded-lg">
-            <button
-              className={`flex-1 py-2 text-sm font-medium rounded-md ${role === 'patient' ? 'bg-white shadow text-slate-900' : 'text-slate-500 hover:text-slate-700'}`}
-              onClick={() => setRole('patient')}
-            >
-              I'm a Patient
-            </button>
-            <button
-              className={`flex-1 py-2 text-sm font-medium rounded-md ${role === 'doctor' ? 'bg-white shadow text-slate-900' : 'text-slate-500 hover:text-slate-700'}`}
-              onClick={() => setRole('doctor')}
-            >
-              I'm a Doctor
-            </button>
-          </div>
-          
           <form className="space-y-4" onSubmit={handleSignup}>
             {error && (
               <div className="bg-red-50 text-red-600 p-3 rounded-md text-sm font-medium">
@@ -171,62 +143,6 @@ export default function SignupPage() {
                 />
               </div>
             </div>
-
-            {role === 'doctor' && (
-              <>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700">Specialty</label>
-                  <div className="mt-1">
-                    <select
-                      name="specialty"
-                      required
-                      value={formData.specialty}
-                      onChange={handleChange}
-                      className="appearance-none block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-slate-900 bg-white"
-                    >
-                      <option value="General Practitioner">General Practitioner</option>
-                      <option value="Cardiologist">Cardiologist</option>
-                      <option value="Dermatologist">Dermatologist</option>
-                      <option value="Neurologist">Neurologist</option>
-                      <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
-                      <option value="Pediatrician">Pediatrician</option>
-                      <option value="Psychiatrist">Psychiatrist</option>
-                      <option value="ENT Specialist">ENT Specialist</option>
-                      <option value="Gynecologist">Gynecologist</option>
-                      <option value="Ophthalmologist">Ophthalmologist</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700">MDCN License Number</label>
-                  <div className="mt-1">
-                    <input
-                      name="mdcn_number"
-                      type="text"
-                      required
-                      value={formData.mdcn_number}
-                      onChange={handleChange}
-                      className="appearance-none block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-slate-900"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700">Short Bio</label>
-                  <div className="mt-1">
-                    <textarea
-                      name="bio"
-                      required
-                      rows={3}
-                      value={formData.bio}
-                      onChange={handleChange}
-                      className="appearance-none block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm placeholder-slate-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-slate-900"
-                    ></textarea>
-                  </div>
-                </div>
-              </>
-            )}
 
             <div className="pt-2">
               <button
