@@ -30,7 +30,7 @@ export default function Home() {
           <div className="max-w-4xl flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-8">
               <span className="flex h-2 w-2 rounded-full bg-blue-600"></span>
-              AI-Powered Triage Live
+              Daaba Agentic Health Triage
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
               How are you feeling today?
