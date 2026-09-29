@@ -72,10 +72,9 @@ def process_rule_based_chat(chat_history, current_message):
             top_disease = "a General Illness"
             disease_info = {"specialty": "General Practitioner", "urgency": "medium", "symptoms": detected_symptoms or ["general malaise"]}
 
-        specialty = disease_info["specialty"]
-        urgency = disease_info["urgency"]
-        
-        response = f"Thank you for sharing. Based on the symptoms you've reported ({', '.join(detected_symptoms)}), there is a possibility this could be related to **{top_disease}**. I strongly recommend seeing a specialist for a proper medical diagnosis and treatment.\n\n"
+        urgency_text = "immediate emergency" if urgency == "high" else "routine medical"
+        response = f"Thank you for sharing these details with me. Based on the symptoms you've reported ({', '.join(detected_symptoms)}), my clinical knowledge base indicates this could potentially be related to **{top_disease}**.\n\n"
+        response += f"Because this condition might require {urgency_text} attention, I strongly recommend seeing a **{specialty}** for a proper diagnosis, testing, and treatment plan. Please select a specialist or hospital from the map below to book an appointment.\n\n"
         
         payload = {
             "symptoms": detected_symptoms,
