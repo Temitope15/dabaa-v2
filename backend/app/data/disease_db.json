@@ -1,157 +1,690 @@
 {
     "Malaria": {
         "symptoms": [
-            "high fever",
+            "fever",
+            "headache",
             "chills",
             "sweating",
-            "headache",
             "nausea",
-            "vomiting"
+            "vomiting",
+            "muscle pain",
+            "fatigue",
+            "weakness"
         ],
         "specialty": "Internal Medicine",
         "urgency": "high"
     },
     "Typhoid Fever": {
         "symptoms": [
-            "prolonged high fever",
-            "fatigue",
+            "fever",
             "headache",
-            "nausea",
+            "fatigue",
             "abdominal pain",
-            "constipation or diarrhoea"
+            "nausea",
+            "constipation",
+            "diarrhea",
+            "loss of appetite",
+            "weakness"
         ],
         "specialty": "Internal Medicine",
-        "urgency": "medium"
+        "urgency": "high"
     },
     "Cholera": {
         "symptoms": [
-            "severe watery diarrhoea",
+            "diarrhea",
             "vomiting",
+            "dehydration",
             "leg cramps",
-            "rapid dehydration"
+            "nausea",
+            "weakness",
+            "thirst"
         ],
         "specialty": "Emergency Medicine",
         "urgency": "high"
     },
-    "Hypertension": {
+    "Tuberculosis": {
         "symptoms": [
-            "often asymptomatic severe headaches",
-            "shortness of breath",
-            "nosebleeds in hypertensive crisis"
-        ],
-        "specialty": "Cardiologist",
-        "urgency": "high"
-    },
-    "Type 2 Diabetes": {
-        "symptoms": [
-            "increased thirst",
-            "frequent urination",
-            "increased hunger",
+            "cough",
+            "chest pain",
             "fatigue",
-            "blurred vision"
-        ],
-        "specialty": "Endocrinologist",
-        "urgency": "medium"
-    },
-    "Asthma": {
-        "symptoms": [
-            "shortness of breath",
-            "chest tightness",
-            "wheezing",
-            "coughing attacks"
+            "night sweats",
+            "weight loss",
+            "fever",
+            "blood in cough"
         ],
         "specialty": "Pulmonologist",
         "urgency": "high"
     },
-    "Peptic Ulcer Disease": {
+    "COVID-19": {
         "symptoms": [
-            "burning stomach pain",
-            "feeling of fullness",
-            "bloating",
-            "heartburn",
-            "nausea"
+            "fever",
+            "cough",
+            "fatigue",
+            "loss of taste",
+            "loss of smell",
+            "shortness of breath",
+            "sore throat",
+            "body ache",
+            "headache"
+        ],
+        "specialty": "Internal Medicine",
+        "urgency": "high"
+    },
+    "HIV/AIDS": {
+        "symptoms": [
+            "fever",
+            "fatigue",
+            "weight loss",
+            "night sweats",
+            "swollen lymph nodes",
+            "diarrhea",
+            "sore throat",
+            "rash",
+            "mouth sores"
+        ],
+        "specialty": "Internal Medicine",
+        "urgency": "high"
+    },
+    "Hepatitis B": {
+        "symptoms": [
+            "fatigue",
+            "nausea",
+            "vomiting",
+            "abdominal pain",
+            "dark urine",
+            "joint pain",
+            "jaundice",
+            "loss of appetite",
+            "fever"
         ],
         "specialty": "Gastroenterologist",
         "urgency": "high"
     },
-    "Tuberculosis": {
+    "Lassa Fever": {
         "symptoms": [
-            "cough lasting >3 weeks",
+            "fever",
+            "headache",
+            "sore throat",
+            "muscle pain",
             "chest pain",
-            "coughing up blood",
-            "fatigue",
-            "night sweats"
+            "nausea",
+            "vomiting",
+            "facial swelling",
+            "bleeding"
         ],
-        "specialty": "Pulmonologist",
+        "specialty": "Emergency Medicine",
+        "urgency": "high"
+    },
+    "Meningitis": {
+        "symptoms": [
+            "headache",
+            "fever",
+            "stiff neck",
+            "nausea",
+            "vomiting",
+            "confusion",
+            "sensitivity to light",
+            "rash"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Urinary Tract Infection": {
+        "symptoms": [
+            "painful urination",
+            "frequent urination",
+            "lower abdominal pain",
+            "cloudy urine",
+            "blood in urine",
+            "urgency to urinate",
+            "fever"
+        ],
+        "specialty": "Urologist",
         "urgency": "medium"
     },
-    "Pneumonia": {
+    "Dengue Fever": {
         "symptoms": [
-            "cough with phlegm",
             "fever",
-            "chills",
+            "headache",
+            "muscle pain",
+            "joint pain",
+            "rash",
+            "nausea",
+            "vomiting",
+            "eye pain",
+            "fatigue"
+        ],
+        "specialty": "Internal Medicine",
+        "urgency": "high"
+    },
+    "Asthma": {
+        "symptoms": [
+            "shortness of breath",
+            "wheezing",
+            "chest tightness",
+            "cough",
             "difficulty breathing"
         ],
         "specialty": "Pulmonologist",
+        "urgency": "high"
+    },
+    "Pneumonia": {
+        "symptoms": [
+            "cough",
+            "fever",
+            "chills",
+            "shortness of breath",
+            "chest pain",
+            "fatigue",
+            "phlegm"
+        ],
+        "specialty": "Pulmonologist",
+        "urgency": "high"
+    },
+    "Bronchitis": {
+        "symptoms": [
+            "cough",
+            "phlegm",
+            "fatigue",
+            "shortness of breath",
+            "chest discomfort",
+            "sore throat",
+            "body ache"
+        ],
+        "specialty": "Pulmonologist",
         "urgency": "medium"
     },
-    "Appendicitis": {
+    "Sinusitis": {
         "symptoms": [
-            "sudden pain on right side of lower abdomen",
-            "nausea",
-            "vomiting",
-            "fever"
+            "nasal congestion",
+            "headache",
+            "facial pain",
+            "runny nose",
+            "cough",
+            "sore throat",
+            "fever",
+            "fatigue"
         ],
-        "specialty": "General Surgeon",
-        "urgency": "high"
-    },
-    "Sickle Cell Crisis": {
-        "symptoms": [
-            "severe pain in chest",
-            "abdomen",
-            "joints",
-            "bones fatigue"
-        ],
-        "specialty": "Hematologist",
-        "urgency": "high"
-    },
-    "Eczema": {
-        "symptoms": [
-            "dry",
-            "itchy",
-            "inflamed",
-            "rough patches of skin"
-        ],
-        "specialty": "Dermatologist",
+        "specialty": "ENT Specialist",
         "urgency": "low"
     },
-    "Glaucoma": {
+    "Common Cold": {
         "symptoms": [
-            "loss of peripheral vision",
-            "halos around lights",
-            "eye redness",
-            "severe eye pain"
+            "runny nose",
+            "sneezing",
+            "sore throat",
+            "cough",
+            "congestion",
+            "headache",
+            "body ache",
+            "fatigue"
         ],
-        "specialty": "Ophthalmologist",
-        "urgency": "high"
+        "specialty": "General Practitioner",
+        "urgency": "low"
     },
-    "Myocardial Infarction": {
+    "Flu (Influenza)": {
         "symptoms": [
-            "pressure",
-            "tightness",
-            "pain in chest/arms spreading to neck/jaw",
-            "cold sweat"
+            "fever",
+            "cough",
+            "sore throat",
+            "body ache",
+            "headache",
+            "fatigue",
+            "chills",
+            "runny nose"
+        ],
+        "specialty": "General Practitioner",
+        "urgency": "medium"
+    },
+    "Hypertension": {
+        "symptoms": [
+            "headache",
+            "shortness of breath",
+            "nosebleed",
+            "dizziness",
+            "chest pain",
+            "blurred vision"
         ],
         "specialty": "Cardiologist",
         "urgency": "high"
     },
+    "Heart Attack": {
+        "symptoms": [
+            "chest pain",
+            "shortness of breath",
+            "sweating",
+            "nausea",
+            "dizziness",
+            "arm pain",
+            "jaw pain"
+        ],
+        "specialty": "Emergency Medicine",
+        "urgency": "high"
+    },
     "Stroke": {
         "symptoms": [
-            "sudden numbness/weakness in face/arm/leg",
+            "sudden numbness",
             "confusion",
-            "trouble speaking"
+            "trouble speaking",
+            "severe headache",
+            "dizziness",
+            "vision problems",
+            "weakness"
+        ],
+        "specialty": "Emergency Medicine",
+        "urgency": "high"
+    },
+    "Heart Failure": {
+        "symptoms": [
+            "shortness of breath",
+            "fatigue",
+            "swollen legs",
+            "swollen ankles",
+            "rapid heartbeat",
+            "cough",
+            "weight gain"
+        ],
+        "specialty": "Cardiologist",
+        "urgency": "high"
+    },
+    "Peptic Ulcer": {
+        "symptoms": [
+            "stomach pain",
+            "bloating",
+            "heartburn",
+            "nausea",
+            "vomiting",
+            "loss of appetite",
+            "weight loss"
+        ],
+        "specialty": "Gastroenterologist",
+        "urgency": "medium"
+    },
+    "Gastroenteritis": {
+        "symptoms": [
+            "diarrhea",
+            "vomiting",
+            "stomach pain",
+            "nausea",
+            "fever",
+            "cramps",
+            "dehydration"
+        ],
+        "specialty": "General Practitioner",
+        "urgency": "medium"
+    },
+    "Appendicitis": {
+        "symptoms": [
+            "abdominal pain",
+            "nausea",
+            "vomiting",
+            "fever",
+            "loss of appetite",
+            "bloating"
+        ],
+        "specialty": "General Surgeon",
+        "urgency": "high"
+    },
+    "Gastric Reflux (GERD)": {
+        "symptoms": [
+            "heartburn",
+            "chest pain",
+            "difficulty swallowing",
+            "regurgitation",
+            "nausea",
+            "sore throat"
+        ],
+        "specialty": "Gastroenterologist",
+        "urgency": "low"
+    },
+    "Food Poisoning": {
+        "symptoms": [
+            "nausea",
+            "vomiting",
+            "diarrhea",
+            "stomach pain",
+            "fever",
+            "cramps",
+            "weakness"
+        ],
+        "specialty": "General Practitioner",
+        "urgency": "medium"
+    },
+    "Irritable Bowel Syndrome": {
+        "symptoms": [
+            "abdominal pain",
+            "bloating",
+            "diarrhea",
+            "constipation",
+            "cramps",
+            "gas"
+        ],
+        "specialty": "Gastroenterologist",
+        "urgency": "low"
+    },
+    "Type 2 Diabetes": {
+        "symptoms": [
+            "frequent urination",
+            "increased thirst",
+            "fatigue",
+            "blurred vision",
+            "weight loss",
+            "slow healing",
+            "tingling hands"
+        ],
+        "specialty": "Endocrinologist",
+        "urgency": "medium"
+    },
+    "Hyperthyroidism": {
+        "symptoms": [
+            "weight loss",
+            "rapid heartbeat",
+            "anxiety",
+            "tremor",
+            "sweating",
+            "difficulty sleeping",
+            "irritability"
+        ],
+        "specialty": "Endocrinologist",
+        "urgency": "medium"
+    },
+    "Hypothyroidism": {
+        "symptoms": [
+            "fatigue",
+            "weight gain",
+            "cold sensitivity",
+            "constipation",
+            "dry skin",
+            "depression",
+            "muscle weakness"
+        ],
+        "specialty": "Endocrinologist",
+        "urgency": "low"
+    },
+    "Arthritis": {
+        "symptoms": [
+            "joint pain",
+            "swelling",
+            "stiffness",
+            "reduced movement",
+            "redness",
+            "fatigue"
+        ],
+        "specialty": "Rheumatologist",
+        "urgency": "low"
+    },
+    "Back Pain": {
+        "symptoms": [
+            "back pain",
+            "muscle ache",
+            "stiffness",
+            "shooting pain",
+            "limited flexibility",
+            "difficulty standing"
+        ],
+        "specialty": "Orthopedic Surgeon",
+        "urgency": "low"
+    },
+    "Sickle Cell Crisis": {
+        "symptoms": [
+            "severe pain",
+            "joint pain",
+            "chest pain",
+            "fever",
+            "fatigue",
+            "swelling",
+            "shortness of breath"
+        ],
+        "specialty": "Hematologist",
+        "urgency": "high"
+    },
+    "Migraine": {
+        "symptoms": [
+            "headache",
+            "nausea",
+            "sensitivity to light",
+            "sensitivity to sound",
+            "dizziness",
+            "blurred vision",
+            "throbbing pain"
         ],
         "specialty": "Neurologist",
+        "urgency": "medium"
+    },
+    "Epilepsy": {
+        "symptoms": [
+            "seizures",
+            "confusion",
+            "staring spells",
+            "uncontrollable jerking",
+            "loss of consciousness",
+            "anxiety"
+        ],
+        "specialty": "Neurologist",
+        "urgency": "high"
+    },
+    "Eczema": {
+        "symptoms": [
+            "itchy skin",
+            "rash",
+            "dry skin",
+            "red patches",
+            "cracked skin",
+            "swelling"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Ringworm": {
+        "symptoms": [
+            "ring-shaped rash",
+            "itchy skin",
+            "red patches",
+            "scaly skin",
+            "hair loss"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Acne": {
+        "symptoms": [
+            "pimples",
+            "blackheads",
+            "whiteheads",
+            "oily skin",
+            "scarring",
+            "inflammation"
+        ],
+        "specialty": "Dermatologist",
+        "urgency": "low"
+    },
+    "Depression": {
+        "symptoms": [
+            "sadness",
+            "loss of interest",
+            "fatigue",
+            "difficulty sleeping",
+            "weight change",
+            "difficulty concentrating",
+            "hopelessness"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "medium"
+    },
+    "Anxiety Disorder": {
+        "symptoms": [
+            "worry",
+            "restlessness",
+            "rapid heartbeat",
+            "sweating",
+            "trembling",
+            "difficulty sleeping",
+            "difficulty concentrating"
+        ],
+        "specialty": "Psychiatrist",
+        "urgency": "medium"
+    },
+    "Prostate Enlargement": {
+        "symptoms": [
+            "frequent urination",
+            "difficulty urinating",
+            "weak urine stream",
+            "urgency to urinate",
+            "incomplete emptying"
+        ],
+        "specialty": "Urologist",
+        "urgency": "medium"
+    },
+    "Menstrual Cramps": {
+        "symptoms": [
+            "lower abdominal pain",
+            "cramps",
+            "back pain",
+            "nausea",
+            "headache",
+            "fatigue",
+            "diarrhea"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "low"
+    },
+    "Fibroid": {
+        "symptoms": [
+            "heavy menstrual bleeding",
+            "pelvic pain",
+            "frequent urination",
+            "constipation",
+            "back pain",
+            "leg pain"
+        ],
+        "specialty": "Gynecologist",
+        "urgency": "medium"
+    },
+    "Glaucoma": {
+        "symptoms": [
+            "eye pain",
+            "blurred vision",
+            "headache",
+            "nausea",
+            "halos around lights",
+            "vision loss",
+            "eye redness"
+        ],
+        "specialty": "Ophthalmologist",
+        "urgency": "high"
+    },
+    "Conjunctivitis": {
+        "symptoms": [
+            "eye redness",
+            "itchy eyes",
+            "discharge from eye",
+            "tearing",
+            "swollen eyelids",
+            "sensitivity to light"
+        ],
+        "specialty": "Ophthalmologist",
+        "urgency": "low"
+    },
+    "Tonsillitis": {
+        "symptoms": [
+            "sore throat",
+            "difficulty swallowing",
+            "fever",
+            "headache",
+            "swollen tonsils",
+            "ear pain",
+            "bad breath"
+        ],
+        "specialty": "ENT Specialist",
+        "urgency": "medium"
+    },
+    "Ear Infection": {
+        "symptoms": [
+            "ear pain",
+            "fever",
+            "difficulty hearing",
+            "fluid drainage",
+            "headache",
+            "irritability"
+        ],
+        "specialty": "ENT Specialist",
+        "urgency": "medium"
+    },
+    "Kidney Stones": {
+        "symptoms": [
+            "severe pain",
+            "back pain",
+            "blood in urine",
+            "nausea",
+            "vomiting",
+            "painful urination",
+            "fever"
+        ],
+        "specialty": "Urologist",
+        "urgency": "high"
+    },
+    "Kidney Infection": {
+        "symptoms": [
+            "fever",
+            "back pain",
+            "nausea",
+            "vomiting",
+            "painful urination",
+            "frequent urination",
+            "blood in urine"
+        ],
+        "specialty": "Nephrologist",
+        "urgency": "high"
+    },
+    "Anaemia": {
+        "symptoms": [
+            "fatigue",
+            "weakness",
+            "pale skin",
+            "shortness of breath",
+            "dizziness",
+            "cold hands",
+            "headache"
+        ],
+        "specialty": "Hematologist",
+        "urgency": "medium"
+    },
+    "Allergic Reaction": {
+        "symptoms": [
+            "rash",
+            "itching",
+            "swelling",
+            "shortness of breath",
+            "sneezing",
+            "watery eyes",
+            "hives"
+        ],
+        "specialty": "General Practitioner",
+        "urgency": "medium"
+    },
+    "Chicken Pox": {
+        "symptoms": [
+            "rash",
+            "fever",
+            "fatigue",
+            "headache",
+            "loss of appetite",
+            "itchy blisters"
+        ],
+        "specialty": "General Practitioner",
+        "urgency": "medium"
+    },
+    "Measles": {
+        "symptoms": [
+            "fever",
+            "cough",
+            "runny nose",
+            "rash",
+            "red eyes",
+            "sensitivity to light",
+            "sore throat"
+        ],
+        "specialty": "General Practitioner",
         "urgency": "high"
     }
 }
