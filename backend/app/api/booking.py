@@ -13,6 +13,7 @@ class BookingRequest(BaseModel):
     hospital_name: str | None = None
     lat: float | None = None
     lng: float | None = None
+    ai_symptoms_summary: str | None = None
 
 @router.post("/book")
 async def book_appointment(request: BookingRequest, current_user: User = Depends(get_current_user)):
@@ -32,7 +33,7 @@ async def book_appointment(request: BookingRequest, current_user: User = Depends
                 external_lat=request.lat,
                 external_lng=request.lng,
                 status="Routing",
-                ai_symptoms_summary="Triage confirmed. User routing to external hospital."
+                ai_symptoms_summary=request.ai_symptoms_summary or "Triage confirmed. User routing to external hospital."
             )
             db.add(appointment)
             db.commit()
@@ -43,7 +44,7 @@ async def book_appointment(request: BookingRequest, current_user: User = Depends
             patient_id=current_user.id,
             doctor_id=int(request.doctor_id),
             status="Pending",
-            ai_symptoms_summary="Triage confirmed via Daaba AI."
+            ai_symptoms_summary=request.ai_symptoms_summary or "Triage confirmed via Daaba AI."
         )
         db.add(appointment)
         db.commit()
@@ -81,6 +82,8 @@ async def get_my_appointments(current_user: User = Depends(get_current_user)):
                 "ai_symptoms_summary": a.ai_symptoms_summary,
                 "doctor_name": a.external_hospital_name if a.external_hospital_name else (a.doctor.user.full_name if a.doctor else "Unknown Doctor"),
                 "doctor_specialty": "External Routing" if a.external_hospital_name else (a.doctor.specialty if a.doctor else "Unknown"),
+                "external_lat": a.external_lat,
+                "external_lng": a.external_lng,
                 "date": "TBD" # Replace with actual slot date when implemented
             }
             for a in appointments
