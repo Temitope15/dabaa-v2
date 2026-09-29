@@ -77,23 +77,18 @@ yarn dev
 
 To fully experience the application exactly as intended, please follow this specific testing flow:
 
-### Test Case A: The Patient Triage Flow
+### Test Case: The Patient Triage Flow
 1. Open your browser and go to `http://localhost:3000`.
-2. Click **"Get Started"** and sign up as a **Patient**. Fill in dummy details (Name, Email, Password, Phone, DOB).
-3. Once registered, you will be redirected to the Chat interface with **Nurse Daaba**.
-4. **Turn 1:** Type a symptom (e.g., *"I have a severe headache"*). 
-5. **Turn 2:** The system will deterministically extract your symptom and ask for duration/severity. Reply with *"Since yesterday."*
-6. **Turn 3:** The Expert System will scan its 500-disease database, find matching illnesses, and ask if you have related unmentioned symptoms (e.g., fever, nausea). Reply *"Yes, I have a fever."*
-7. **The Result:** The system will calculate the highest probability disease (e.g., Malaria) and recommend a specific specialist (e.g., General Practitioner).
-8. **The Map:** An interactive OpenStreetMap will immediately appear, dropping a pin on your location and showing nearby appropriate hospitals/doctors.
-9. Click **"Book Appointment"** on one of the hospital cards. A "Booking Confirmed!" success message will appear.
-
-### Test Case B: The Doctor Dashboard
-1. Go back to `http://localhost:3000/signup`.
-2. This time, select the **"I'm a Doctor"** toggle at the top of the form.
-3. Notice how the form dynamically expands to ask for your **Specialty**, **MDCN License Number**, and **Bio**.
-4. Fill in the details (ensure your MDCN number format matches standard practice, e.g., `MDCN-123456` if validation is active) and register.
-5. You will be redirected to the **Doctor Portal** (`/doctor`), where you can view your analytics, pending appointment requests from patients, and update your clinical profile.
+2. Review the modern landing page and click **"Meet Nurse Daaba 😊"** or **"Sign up"**. 
+3. Sign up for a Daaba account by filling in dummy details (Name, Email, Password, Phone, DOB).
+4. Once registered, you will be seamlessly redirected to the Chat interface with **Nurse Daaba**.
+5. **Turn 1:** Type a symptom colloquially (e.g., *"I have a severe headache"* or *"I am feeling cold"*). 
+6. **Dynamic Triage:** The system deterministically extracts your symptoms (using a custom synonym mapper for slang) and asks for follow-up symptoms dynamically. 
+7. **The Loop:** It continues narrowing down using a rule-based inference engine against nearly 500 diseases until it hits an 80% algorithmic confidence threshold.
+8. **The Diagnosis:** Once confident (or after 10 turns), it will calculate the highest probability disease, present a triage summary, and recommend a specific specialist (e.g., General Practitioner).
+9. **Smart Geo-Routing:** An interactive map will immediately appear. The system queries the OpenStreetMap (OSM) Overpass API to find actual hospitals or specific specialists near your location.
+10. **Directions:** Click **"Get Directions"** on one of the hospital cards. Your browser will prompt for geolocation, and automatically open a new tab to Google Maps with turn-by-turn directions from your exact spot to the hospital!
+11. **Appointments/Dashboard:** Navigate to your Appointments page from the sidebar to view your complete saved AI Triage Summary and retrieve the routing directions at any time.
 
 ---
 
