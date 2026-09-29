@@ -25,10 +25,11 @@ class Orchestrator:
         return chat_history
 
     def _find_doctors_for_response(self, response_text: str, lat: float, lng: float):
-        """Check if the Assessment Agent reached a Triage Decision by finding a JSON payload."""
+        """Check if the rule engine reached a Triage Decision by finding a JSON payload."""
         import re
         doctors = []
         events = []
+        warning_msg = ""
         
         # Look for the JSON ACL payload block
         json_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
@@ -40,23 +41,24 @@ class Orchestrator:
                 events.append(f"Received ACL Payload. Urgency: {urgency.upper()}")
                 events.append(f"Referral Agent searching for {specialty} nearby...")
                 
-                doctors = referral_agent.find_doctors(specialty, patient_lat=lat, patient_lng=lng)
+                # new referral agent returns (doctors, warning_msg)
+                doctors, warning_msg = referral_agent.find_doctors(specialty, patient_lat=lat, patient_lng=lng)
                 
                 if doctors:
                     if any(doc.get("is_hospital") for doc in doctors):
-                        events.append(f"No specific doctors found. Found {len(doctors)} nearby hospital(s).")
+                        events.append(f"No specific specialists found. Found {len(doctors)} nearby hospital(s).")
                     else:
-                        events.append(f"Found {len(doctors)} doctor(s).")
+                        events.append(f"Found {len(doctors)} specialist(s).")
             except json.JSONDecodeError:
                 events.append("Error: Failed to parse ACL JSON payload.")
                 
-        return doctors, events
+        return doctors, events, warning_msg
 
     def process_message(self, patient_id: int, message: str, lat: float = 6.5244, lng: float = 3.3792, api_key: str = None):
         session = self.get_or_create_session(patient_id)
         chat_history = self._trim_history(session["chat_history"])
         session["chat_history"] = chat_history
-        events = ["Assessment Agent Analyzing Symptoms..."]
+        events = ["Analyzing Symptoms..."]
         
         # 0. Deterministic Safety Layer
         emergency_keywords = ["accident", "unconscious", "bleeding", "heart attack", "stroke", "suicide", "can't breathe"]
@@ -65,9 +67,12 @@ class Orchestrator:
             safety_msg = "**EMERGENCY DETECTED**: This is an automated safety override. Do not wait for an appointment. Please head to the nearest emergency room immediately or call local emergency services (112 in Nigeria / LASAMBUS)."
             chat_history.append(("human", message))
             chat_history.append(("ai", safety_msg))
+            docs, msg = referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)
+            if msg:
+                safety_msg += f"\n\n*{msg}*"
             return {
                 "text": safety_msg,
-                "doctors": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng),
+                "doctors": docs,
                 "events": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]
             }
             
@@ -82,15 +87,15 @@ class Orchestrator:
         chat_history.append(("ai", response_text))
         
         # 2. Check if the Assessment Agent reached a Triage Decision
-        doctors, doc_events = self._find_doctors_for_response(response_text, lat, lng)
+        doctors, doc_events, warning_msg = self._find_doctors_for_response(response_text, lat, lng)
         events.extend(doc_events)
         
         # Remove JSON block from the text shown to user
         import re
         display_text = re.sub(r'```json\s*.*?\s*```', '', response_text, flags=re.DOTALL).strip()
         
-        if doctors and any(doc.get("is_hospital") for doc in doctors):
-            display_text += "\n\n*Oops! Sorry, there are no specific doctors around right now, but these are nearby hospitals that you can go to based on your location.*"
+        if warning_msg:
+            display_text += f"\n\n*{warning_msg}*"
             
         return {
             "text": display_text,
@@ -113,7 +118,10 @@ class Orchestrator:
             chat_history.append(("ai", safety_msg))
             yield {"type": "events", "data": ["CRITICAL: Safety Override Triggered", "Routing to Nearest Hospitals"]}
             yield {"type": "token", "data": safety_msg}
-            yield {"type": "doctors", "data": referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)}
+            docs, msg = referral_agent.find_doctors("Emergency Medicine", patient_lat=lat, patient_lng=lng)
+            if msg:
+                yield {"type": "token", "data": f"\n\n*{msg}*"}
+            yield {"type": "doctors", "data": docs}
             return
             
         # 1. Deterministic Rule-Based Chat Flow (NO AI)
@@ -121,7 +129,11 @@ class Orchestrator:
         
         full_text = process_rule_based_chat(chat_history, message)
 
-        for word in full_text.split():
+        # Remove JSON block for token streaming display
+        import re
+        display_text = re.sub(r'```json\s*.*?\s*```', '', full_text, flags=re.DOTALL).strip()
+
+        for word in display_text.split():
             yield {"type": "token", "data": word + " "}
         
         yield {"type": "events", "data": ["Rule-based Engine Analyzing...", "Triage Complete."]}
@@ -131,11 +143,10 @@ class Orchestrator:
         chat_history.append(("ai", full_text))
         
         # 2. Find doctors
-        doctors, doc_events = self._find_doctors_for_response(full_text, lat, lng)
+        doctors, doc_events, warning_msg = self._find_doctors_for_response(full_text, lat, lng)
         
-        if doctors and any(doc.get("is_hospital") for doc in doctors):
-            hospital_note = "\n\n*Oops! Sorry, there are no specific doctors around right now, but these are nearby hospitals that you can go to based on your location.*"
-            yield {"type": "token", "data": hospital_note}
+        if warning_msg:
+            yield {"type": "token", "data": f"\n\n*{warning_msg}*"}
         
         all_events = ["Rule-based Engine Analyzing...", "Triage Complete."] + doc_events
         yield {"type": "events", "data": all_events}
