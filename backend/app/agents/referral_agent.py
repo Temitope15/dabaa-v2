@@ -23,7 +23,7 @@ class ReferralAgent:
     def _query_overpass(self, query: str) -> List[Dict[str, Any]]:
         """Execute a query against the Overpass API."""
         try:
-            with httpx.Client(timeout=15.0) as client:
+            with httpx.Client(timeout=45.0) as client:
                 response = client.get(self.overpass_url, params={'data': query}, headers=self.headers)
                 response.raise_for_status()
                 data = response.json()

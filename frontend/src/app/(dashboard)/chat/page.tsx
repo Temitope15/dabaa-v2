@@ -200,11 +200,23 @@ export default function ChatPage() {
     });
   };
 
-  const handleBooking = async (doctorId: string | number) => {
+  const handleBooking = async (doc: any) => {
+    const doctorId = doc.id;
     setBookingState(prev => ({ ...prev, [doctorId]: 'loading' as const }));
     try {
-      await api.post('/book', { doctor_id: doctorId });
+      const isExternal = doctorId.toString().startsWith('osm-') || doctorId.toString().startsWith('mock-');
+      
+      const payload = isExternal 
+        ? { doctor_id: doctorId, hospital_name: doc.name, lat: doc.lat, lng: doc.lng }
+        : { doctor_id: doctorId };
+        
+      await api.post('/book', payload);
       setBookingState(prev => ({ ...prev, [doctorId]: 'success' as const }));
+      
+      if (isExternal) {
+        // Open Google Maps directions in a new tab
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${doc.lat},${doc.lng}`, '_blank');
+      }
       
       // Seamless flow: redirect to appointments page after a short success message
       setTimeout(() => {
@@ -213,7 +225,7 @@ export default function ChatPage() {
     } catch (err) {
       console.error(err);
       setBookingState(prev => ({ ...prev, [doctorId]: 'idle' as const }));
-      setErrorToast("Failed to book appointment. Please try again.");
+      setErrorToast("Failed to process request. Please try again.");
     }
   };
 
@@ -345,7 +357,7 @@ export default function ChatPage() {
                       <button 
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleBooking(doc.id);
+                          handleBooking(doc);
                         }}
                         className={`w-full py-2.5 rounded-xl font-medium transition-colors ${
                           isSelected ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -354,9 +366,9 @@ export default function ChatPage() {
                         {bookingState[doc.id] === 'loading' ? (
                           <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin mx-auto"></div>
                         ) : bookingState[doc.id] === 'success' ? (
-                          'Booking Confirmed!'
+                          doc.id.toString().startsWith('osm-') || doc.id.toString().startsWith('mock-') ? 'Getting Directions...' : 'Booking Confirmed!'
                         ) : (
-                          'Book Appointment'
+                          doc.id.toString().startsWith('osm-') || doc.id.toString().startsWith('mock-') ? 'Get Directions' : 'Book Appointment'
                         )}
                       </button>
                     </div>
