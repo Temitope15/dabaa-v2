@@ -242,7 +242,7 @@ def build_unknown_response() -> str:
     return response
 
 
-def build_followup_question(detected: list, scores: dict, top_disease: str, top_prob: float) -> str:
+def build_followup_question(detected: list, rejected: set, scores: dict, top_disease: str, top_prob: float) -> str:
     """Build a guided follow-up question with a checklist of discriminating symptoms."""
     # Get top 3 candidate diseases
     sorted_diseases = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:3]
@@ -252,9 +252,13 @@ def build_followup_question(detected: list, scores: dict, top_disease: str, top_
     seen = set()
     for disease_name, _ in sorted_diseases:
         for sym in DISEASES[disease_name]["symptoms"]:
-            if sym not in detected and sym not in seen:
+            if sym not in detected and sym not in rejected and sym not in seen:
                 seen.add(sym)
                 unmentioned.append(sym)
+
+    # If we run out of unmentioned symptoms for the top diseases, just diagnose
+    if not unmentioned:
+        return "READY_TO_DIAGNOSE"
 
     # Pick the most discriminating 5 symptoms
     checklist = unmentioned[:5]
@@ -277,20 +281,37 @@ def process_rule_based_chat(chat_history: list, current_message: str) -> str:
     """
     Fully dynamic diagnosis loop.
     - Extracts symptoms from ALL messages (cumulative).
+    - Tracks rejected symptoms from previous checklists.
     - Scores all diseases every turn.
     - If confidence >= 80% -> output diagnosis immediately.
-    - If confidence < 80% -> ask guided follow-up with discriminating symptoms.
+    - If confidence < 80% -> ask guided follow-up with new discriminating symptoms.
     - Soft safety net at 10 total messages -> output best match with actual %.
     """
     # Gather all human messages
     human_messages = [msg[1] for msg in chat_history if msg[0] == "human"]
     human_messages.append(current_message)
     all_text = " ".join(human_messages)
-    turn_number = len(human_messages)  # How many patient messages so far
-    total_messages = len(chat_history) + 1  # Total messages in conversation
+    turn_number = len(human_messages)
+    total_messages = len(chat_history) + 1
 
-    # Extract symptoms using Fuzzy Trie
+    # Gather all symptoms the AI explicitly asked about in checklists
+    asked_symptoms = set()
+    for role, msg in chat_history:
+        if role == "ai" and "[CHECKLIST]" in msg:
+            start = msg.find("[CHECKLIST]") + 11
+            end = msg.find("[/CHECKLIST]")
+            if start != -1 and end != -1:
+                try:
+                    checklist = json.loads(msg[start:end])
+                    asked_symptoms.update(checklist)
+                except:
+                    pass
+
+    # Extract confirmed symptoms using Fuzzy Trie
     detected = extract_symptoms_fuzzy(all_text)
+
+    # Calculate rejected symptoms (asked but not confirmed)
+    rejected = asked_symptoms - set(detected)
 
     # SAFETY NET: Turn 1, no symptoms found -> ask to describe
     if turn_number == 1 and not detected:
@@ -313,13 +334,11 @@ def process_rule_based_chat(chat_history: list, current_message: str) -> str:
 
     # DYNAMIC DECISION
     if top_prob >= 0.80:
-        # ✅ Confident enough -> DIAGNOSE
         return build_diagnosis_response(detected, scores)
-
     elif total_messages >= 10:
-        # ⚠️ Soft safety net: output best match with actual percentage
         return build_diagnosis_response(detected, scores)
-
     else:
-        # 🔄 Not confident yet -> ask guided follow-up
-        return build_followup_question(detected, scores, top_disease, top_prob)
+        followup = build_followup_question(detected, rejected, scores, top_disease, top_prob)
+        if followup == "READY_TO_DIAGNOSE":
+            return build_diagnosis_response(detected, scores)
+        return followup
