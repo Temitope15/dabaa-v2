@@ -207,8 +207,8 @@ export default function ChatPage() {
       const isExternal = doctorId.toString().startsWith('osm-') || doctorId.toString().startsWith('mock-');
       
       const payload = isExternal 
-        ? { doctor_id: doctorId, hospital_name: doc.name, lat: doc.lat, lng: doc.lng, ai_symptoms_summary: currentSlide.message }
-        : { doctor_id: doctorId, ai_symptoms_summary: currentSlide.message };
+        ? { doctor_id: doctorId, hospital_name: doc.name, lat: doc.lat, lng: doc.lng, ai_symptoms_summary: currentSlide.question }
+        : { doctor_id: doctorId, ai_symptoms_summary: currentSlide.question };
         
       await api.post('/book', payload);
       setBookingState(prev => ({ ...prev, [doctorId]: 'success' as const }));
