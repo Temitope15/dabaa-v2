@@ -37,12 +37,20 @@ def process_rule_based_chat(chat_history, current_message):
         if not detected_symptoms:
             return "Could you provide a bit more detail about your symptoms so I can narrow down the possible causes?"
             
-        # Find possible diseases
+        # Find possible diseases using Algorithmic Probability (Dice coefficient)
         disease_scores = {}
         for name, data in DISEASES.items():
-            score = sum(1 for sym in detected_symptoms if sym in data["symptoms"])
-            if score > 0:
-                disease_scores[name] = score
+            disease_syms = set(data["symptoms"])
+            if not disease_syms: continue
+            
+            matches = set(detected_symptoms).intersection(disease_syms)
+            match_count = len(matches)
+            
+            if match_count > 0:
+                precision = match_count / len(detected_symptoms)
+                recall = match_count / len(disease_syms)
+                probability = (2 * precision * recall) / (precision + recall) # F1 Score
+                disease_scores[name] = probability
                 
         if not disease_scores:
             return "I see. Are you experiencing any common symptoms like fever, nausea, vomiting, or dizziness?"
@@ -58,29 +66,42 @@ def process_rule_based_chat(chat_history, current_message):
             return "Thank you for the details. I have enough information to make a recommendation."
             
     else: # len(chat_history) >= 4 (Final Turn)
-        # Final diagnosis
+        # Final diagnosis using Algorithmic Probability
         disease_scores = {}
         for name, data in DISEASES.items():
-            score = sum(1 for sym in detected_symptoms if sym in data["symptoms"])
-            if score > 0:
-                disease_scores[name] = score
+            disease_syms = set(data["symptoms"])
+            if not disease_syms: continue
+            
+            matches = set(detected_symptoms).intersection(disease_syms)
+            match_count = len(matches)
+            
+            if match_count > 0:
+                precision = match_count / len(detected_symptoms)
+                recall = match_count / len(disease_syms)
+                probability = (2 * precision * recall) / (precision + recall)
+                disease_scores[name] = probability
                 
         if disease_scores:
-            top_disease = max(disease_scores.items(), key=lambda x: x[1])[0]
+            top_disease, top_prob = max(disease_scores.items(), key=lambda x: x[1])
             disease_info = DISEASES[top_disease]
+            prob_percentage = int(top_prob * 100)
         else:
             top_disease = "a General Illness"
             disease_info = {"specialty": "General Practitioner", "urgency": "medium", "symptoms": detected_symptoms or ["general malaise"]}
+            prob_percentage = 50
 
+        specialty = disease_info["specialty"]
+        urgency = disease_info["urgency"]
+        
         urgency_text = "immediate emergency" if urgency == "high" else "routine medical"
-        response = f"Thank you for sharing these details with me. Based on the symptoms you've reported ({', '.join(detected_symptoms)}), my clinical knowledge base indicates this could potentially be related to **{top_disease}**.\n\n"
+        response = f"Thank you for sharing these details with me. Based on the symptoms you've reported ({', '.join(detected_symptoms)}), my clinical knowledge base calculates a **{prob_percentage}% algorithmic probability** that this could be related to **{top_disease}**.\n\n"
         response += f"Because this condition might require {urgency_text} attention, I strongly recommend seeing a **{specialty}** for a proper diagnosis, testing, and treatment plan. Please select a specialist or hospital from the map below to book an appointment.\n\n"
         
         payload = {
             "symptoms": detected_symptoms,
             "urgency": urgency,
             "specialty": specialty,
-            "medical_summary": f"Patient reports symptoms indicative of possible {top_disease}."
+            "medical_summary": f"Patient reports symptoms with a {prob_percentage}% algorithmic match for {top_disease}."
         }
         response += f"```json\n{json.dumps(payload)}\n```"
         return response
