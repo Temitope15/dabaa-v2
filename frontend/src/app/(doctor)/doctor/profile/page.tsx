@@ -22,12 +22,13 @@ export default function DoctorProfilePage() {
         // Assuming the response includes doctor specific fields, we populate them.
         // If they are nested or in another endpoint, this needs adjustment based on actual backend design.
         if (res.data) {
+           const docProfile = res.data.doctor_profile || {};
            setFormData({
-             specialty: res.data.specialty || 'General Practitioner',
-             bio: res.data.bio || '',
-             mdcn_number: res.data.mdcn_number || '',
-             lat: res.data.lat || 0,
-             lng: res.data.lng || 0
+             specialty: docProfile.specialty || 'General Practitioner',
+             bio: docProfile.bio || '',
+             mdcn_number: docProfile.mdcn_number || '',
+             lat: docProfile.lat || 0,
+             lng: docProfile.lng || 0
            });
         }
       } catch (err) {
