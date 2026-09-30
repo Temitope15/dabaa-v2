@@ -21,16 +21,26 @@ class ReferralAgent:
         return round(c * r, 2)
 
     def _query_overpass(self, query: str) -> List[Dict[str, Any]]:
-        """Execute a query against the Overpass API."""
-        try:
-            with httpx.Client(timeout=45.0) as client:
-                response = client.get(self.overpass_url, params={'data': query}, headers=self.headers)
-                response.raise_for_status()
-                data = response.json()
-                return data.get('elements', [])
-        except Exception as e:
-            print(f"Overpass API error: {e}")
-            return []
+        """Execute a query against the Overpass API with fallbacks."""
+        endpoints = [
+            "https://overpass-api.de/api/interpreter",
+            "https://lz4.overpass-api.de/api/interpreter",
+            "https://z.overpass-api.de/api/interpreter",
+            "https://overpass.kumi.systems/api/interpreter"
+        ]
+        
+        for endpoint in endpoints:
+            try:
+                with httpx.Client(timeout=45.0) as client:
+                    response = client.get(endpoint, params={'data': query}, headers=self.headers)
+                    response.raise_for_status()
+                    data = response.json()
+                    return data.get('elements', [])
+            except Exception as e:
+                print(f"Overpass API error on {endpoint}: {e}")
+                continue
+                
+        return []
 
     def _parse_elements(self, elements: List[Dict], patient_lat: float, patient_lng: float) -> List[Dict]:
         """Parse OSM elements into the format expected by the frontend."""
